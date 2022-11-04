@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/paca/",
+    "title": "Activity Patterns for paca",
+    "description": "Activity Patterns for cuniculus paca.",
+    "author": [
+      {
+        "name": "Diego J. Lizcano",
+        "url": "http://dlizcano.github.io/"
+      }
+    ],
+    "date": "2022-11-04",
+    "categories": [],
+    "contents": "\r\nGrafica actividad\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+    "preview": "https://dlizcano.github.io/activity/fig/paca.png",
+    "last_modified": "2022-11-04T13:44:39-05:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/welcome/",
     "title": "Welcome to Activity Patterns",
     "description": "Welcome to our new blog, Activity Patterns. We hope you enjoy \nreading what we have to say!",

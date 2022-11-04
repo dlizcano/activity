@@ -1,0 +1,13 @@
+---
+title: "About this blog"
+description: |
+  Some additional details about the blog
+---
+
+This blog presents results for the initiative Awake-CameraTrap.  
+
+https://app.wildlifeinsights.org/initiatives/2000134/Awake-CameraTrap
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```

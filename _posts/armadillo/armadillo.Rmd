@@ -1,7 +1,7 @@
 ---
-title: "Activity Pattern for paca"
+title: "Activity Pattern for armadillo"
 description: |
-  Activity Pattern for Cuniculus paca.
+  Activity Pattern for Dasypus novemcinctus.
 author:
   - name: Diego J. Lizcano  
     url: http://dlizcano.github.io/
@@ -17,7 +17,7 @@ highlight: pygments
 creative_commons: CC BY-SA
 citation_url: https://dlizcano.github.io/activity
 base_url: https://dlizcano.github.io/activity
-preview: https://dlizcano.github.io/activity/fig/paca.png
+preview: https://dlizcano.github.io/activity/fig/armadillo.png
 twitter:
   site: "@rstudio"
   creator: "@dlizcano"
@@ -79,14 +79,14 @@ camaras$Time <- format(as.POSIXct(camaras$timestamp), format = "%H:%M:%S")
 
 
 
-paca_selva <- filter(camaras, Species=="Cuniculus paca" & subproject_name=="Selva Vides")
+armadillo_selva <- filter(camaras, Species=="Dasypus novemcinctus" & subproject_name=="Selva Vides")
 by_sp <- camaras %>%  group_by(Species) %>% tally()
-by_sp_predio <- paca_selva %>%  group_by(deployment_id) %>% tally()
-names(by_sp_predio) <-  c("Camara", "Fotos paca", "geometry")
+by_sp_predio <- armadillo_selva %>%  group_by(deployment_id) %>% tally()
+names(by_sp_predio) <-  c("Camara", "Fotos armadillo", "geometry")
 
 
 library(terra); library(maptiles)
-sierraFebpts <- st_as_sf(paca_selva, coords = c("longitude", "latitude"), crs=4326)
+sierraFebpts <- st_as_sf(armadillo_selva, coords = c("longitude", "latitude"), crs=4326)
 sierraBase <- get_tiles(sierraFebpts, provider="OpenTopoMap", zoom = 14)
 #st_crs(sierraFebpts)$epsg
 plotRGB(sierraBase)
@@ -109,7 +109,7 @@ paca_window <- qtm(putumayo_osm1) +
 #  tm_shape(rio) +
 #  tm_polygons("Rio", colorNA =NULL, border.col = "blue", palette = "blue") +  #tm_symbols (size = 0.5) +
  tm_shape(by_sp_predio) + # tm_symbols (col="red", size = 0.25) + 
-    tm_bubbles(size = "Fotos paca", col = "red", border.col= "red", alpha= 0.5, 
+    tm_bubbles(size = "Fotos armadillo", col = "red", border.col= "red", alpha= 0.5, 
                legend.size.is.portrait=TRUE) +
     # tm_dots(col = "Species", size = 0.25, 
     #        shape = 16, title = "Especie", legend.show = TRUE,
@@ -142,11 +142,11 @@ paca_window
 # make shorter table
 cuniculus <- camaras %>% 
   dplyr::select(Species, DateTimeOriginal, Date, Time) %>% 
-  dplyr::filter (Species =="Cuniculus paca" )  %>% as.data.frame()
+  dplyr::filter (Species =="Dasypus novemcinctus" )  %>% as.data.frame()
 
 # par(mar = c(5, 4, 3, 3) + 0.1)
 activityDensity (recordTable = cuniculus,
-                 species     = "Cuniculus paca",
+                 species     = "Dasypus novemcinctus",
                  recordDateTimeCol="DateTimeOriginal") 
 rect(0, 0, 6, 0.5, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transparent")
 rect(18, 0, 24, 0.5, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transparent")

@@ -1,0 +1,20 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this blog",
+      "description": "Some additional details about the blog",
+      "author": [],
+      "contents": "\r\nThis blog presents results for the initiative Awake-CameraTrap.\r\nhttps://app.wildlifeinsights.org/initiatives/2000134/Awake-CameraTrap\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-11-04T13:51:46-05:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Activity Patterns",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-11-04T23:31:19-05:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}

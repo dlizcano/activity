@@ -1,7 +1,7 @@
 ---
 title: "Activity Pattern for paca"
 description: |
-  Activity Pattern for Cuniculus paca.
+  Activity Pattern for _Cuniculus paca_
 author:
   - name: Diego J. Lizcano  
     url: http://dlizcano.github.io/
@@ -33,6 +33,15 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```
 
 
+# Descripción
+
+Mamífero común y abundante de tamaño mediano a grande. Conocido como guanta, paca, boruga
+
+### Detalles de Wikipedia
+
+https://es.wikipedia.org/wiki/Cuniculus_paca
+
+
 # Mapa de distribución
 
 ```{r}
@@ -46,11 +55,20 @@ library(raster)
 library(tmap)
 library(tmaptools)
 
-source("D:/BoxFiles/Box Sync/CodigoR/patrones_actividad/R/TEAM.R")
+# source("D:/BoxFiles/Box Sync/CodigoR/patrones_actividad/R/TEAM.R")
+
+source("C:/Users/silvi/Documents/GitHub/activity/docs/R/TEAM.R")
 
 ##### Read datos.raw
-deployment <- read_csv("D:/BoxFiles/Box Sync/CodigoR/patrones_actividad/data/deployments.csv")
-images <- read_csv("D:/BoxFiles/Box Sync/CodigoR/patrones_actividad/data/images.csv")
+##### Read datos.raw
+# deployment <- read_csv("D:/BoxFiles/Box Sync/CodigoR/patrones_actividad/data/deployments.csv")
+
+deployment <- read_csv("C:/Users/silvi/Documents/GitHub/activity/data/deployments.csv")
+
+# images <- read_csv("D:/BoxFiles/Box Sync/CodigoR/patrones_actividad/data/images.csv")
+# full.data <- left_join(images, deployment)
+
+images <- read_csv("C:/Users/silvi/Documents/GitHub/activity/data/images.csv")
 full.data <- left_join(images, deployment)
 
 #### elimina dos camaras sin coordenadas
@@ -164,7 +182,10 @@ rect(18, 0, 24, 0.5, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transpare
 
 ```
 
+# Foto
 
+ ![Boruga](https://dlizcano.github.io/activity/fig/Paca_small.jpg)
+ https://dlizcano.github.io/activity/fig/Paca_large.jpg
 
 # Información de la sesión en R.
 

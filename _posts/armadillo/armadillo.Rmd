@@ -1,7 +1,7 @@
 ---
 title: "Activity Pattern for armadillo"
 description: |
-  Activity Pattern for Dasypus novemcinctus.
+  Activity Pattern for _Dasypus novemcinctus_
 author:
   - name: Diego J. Lizcano  
     url: http://dlizcano.github.io/
@@ -183,9 +183,8 @@ rect(18, 0, 24, 0.5, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transpare
 
 # Foto
 
- ![Armadillo](https://storage.googleapis.com/145625598251_2004354_797_aweput__main/deployment%2F2159065%2F93231a12-135f-44be-b11d-90cec826bbf8.JPG?GoogleAccessId=api-wi%40cameratraprepo.iam.gserviceaccount.com&Expires=1667926132&Signature=VNZSa6%2FI4b5i1VtBEg%2BPApUbM84cdIuy6i58PJz8ovVTIEzFvtLFxk8uzsC1JvZ8KRvugeT%2BCfgMGZ6wpa6svzNjqA6xTdDaLTtvvKS1Up%2FNk95qiBpaP%2Feg8s3tKvuJYncOxCWW3KuHpa1BJniwSa18xsVO9r8dop4vvcrsmhFV%2BJrAeueE5K8YE8fcxzpldfQYP75TQTEkqtavIA3KGEiIYlQQhwMWM9uGw6wxsGNEN%2BGocRzl2x%2BS5OPJhu5XwAcqUJF1K3xC5L7OjY0splIYwNVrYmhNGiKvD%2Bq%2ByeqgVFzRSyM3aFCAJ%2FK%2BF2F8%2B0M%2B2zF3x1xm5rvoHJeliA%3D%3D)
- 
-
+ ![Armadillo](https://dlizcano.github.io/activity/fig/Armadillo_small.jpg)
+ https://dlizcano.github.io/activity/fig/Armadillo_large.jpg
 
 # Información de la sesión en R.
 

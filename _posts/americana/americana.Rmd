@@ -184,7 +184,7 @@ rect(18, 0, 24, 0.5, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transpare
 
 # Foto
 
- ![Neque](https://dlizcano.github.io/activity/fig/Mazama_americana_small.jpg)
+ ![Mazama](https://dlizcano.github.io/activity/fig/Mazama_americana_small.jpg)
  https://dlizcano.github.io/activity/fig/Mazama_americana_large.jpg
 
 # Información de la sesión en R.

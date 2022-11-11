@@ -5,15 +5,15 @@
       "title": "About this blog",
       "description": "Some additional details about the blog",
       "author": [],
-      "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-11-08T10:17:04-05:00"
+      "contents": "\r\nThis blog presents results for the initiative Awake-CameraTrap.\r\nhttps://app.wildlifeinsights.org/initiatives/2000134/Awake-CameraTrap\r\nMost pictures are from the reserves Selva Vides and el Escondite in Putumayo.\r\nSelva VidesEl Escondite\r\n\r\n\r\n",
+      "last_modified": "2022-11-11T06:03:46-05:00"
     },
     {
       "path": "index.html",
       "title": "Activity Patterns",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-11-08T18:16:47-05:00"
+      "last_modified": "2022-11-11T06:05:11-05:00"
     }
   ],
   "collections": ["posts/posts.json"]

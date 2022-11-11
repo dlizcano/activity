@@ -8,6 +8,12 @@ This blog presents results for the initiative Awake-CameraTrap.
 
 https://app.wildlifeinsights.org/initiatives/2000134/Awake-CameraTrap
 
+Most pictures are from the reserves Selva Vides and el Escondite in Putumayo.
+
+ ![Selva Vides](https://dlizcano.github.io/activity/fig/selvavides_logo.jpg)
+ 
+  ![El Escondite](https://dlizcano.github.io/activity/fig/escondite_logo.jpg)
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```

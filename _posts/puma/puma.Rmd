@@ -1,7 +1,7 @@
 ---
-title: "Activity Pattern for jaguar"
+title: "Activity Pattern for Puma"
 description: |
-  Activity Pattern for _Panthera onca_
+  Activity Pattern for _Puma concolor_
 author:
   - name: Diego J. Lizcano  
     url: http://dlizcano.github.io/
@@ -17,7 +17,7 @@ highlight: pygments
 creative_commons: CC BY-SA
 citation_url: https://dlizcano.github.io/activity
 base_url: https://dlizcano.github.io/activity
-preview: https://dlizcano.github.io/activity/fig/jaguar.png
+preview: https://dlizcano.github.io/activity/fig/puma.png
 twitter:
   site: "@rstudio"
   creator: "@dlizcano"
@@ -35,11 +35,11 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 # Descripción
 
-Mamífero poco común y poco abundante de tamaño grande, Conocido jaguar, tigre mariposo.
+Mamífero poco común y poco abundante de tamaño grande. Conocido puma, tigre colorado
 
 ### Detalles de Wikipedia
 
-https://es.wikipedia.org/wiki/Panthera_onca
+https://es.wikipedia.org/wiki/Puma_concolor
 
 
 # Mapa de distribución
@@ -97,10 +97,10 @@ camaras$Time <- format(as.POSIXct(camaras$timestamp), format = "%H:%M:%S")
 
 
 
-paca_selva <- filter(camaras, Species=="Panthera onca" & subproject_name=="Selva Vides")
+paca_selva <- filter(camaras, Species=="Puma concolor" & subproject_name=="Selva Vides")
 by_sp <- camaras %>%  group_by(Species) %>% tally()
 by_sp_predio <- paca_selva %>%  group_by(deployment_id) %>% tally()
-names(by_sp_predio) <-  c("Camara", "Fotos jaguar", "geometry")
+names(by_sp_predio) <-  c("Camara", "Fotos puma", "geometry")
 
 
 library(terra); library(maptiles)
@@ -127,7 +127,7 @@ paca_window <- qtm(putumayo_osm1) +
 #  tm_shape(rio) +
 #  tm_polygons("Rio", colorNA =NULL, border.col = "blue", palette = "blue") +  #tm_symbols (size = 0.5) +
  tm_shape(by_sp_predio) + # tm_symbols (col="red", size = 0.25) + 
-    tm_bubbles(size = "Fotos jaguar", col = "red", border.col= "red", alpha= 0.5, 
+    tm_bubbles(size = "Fotos puma", col = "red", border.col= "red", alpha= 0.5, 
                legend.size.is.portrait=TRUE) +
     # tm_dots(col = "Species", size = 0.25, 
     #        shape = 16, title = "Especie", legend.show = TRUE,
@@ -154,17 +154,17 @@ paca_window
 
 # Grafica actividad
 
-```{r eval=TRUE}
+```{r eval=FALSE}
 
 
 # make shorter table
-Jaguar <- camaras %>% 
+puma <- camaras %>% 
   dplyr::select(Species, DateTimeOriginal, Date, Time) %>% 
-  dplyr::filter (Species =="Panthera onca" )  %>% as.data.frame()
+  dplyr::filter (Species =="Puma concolor" )  %>% as.data.frame()
 
 # par(mar = c(5, 4, 3, 3) + 0.1)
-activityDensity (recordTable = Jaguar,
-                 species     = "Panthera onca",
+activityDensity (recordTable = puma,
+                 species     = "Puma concolor",
                  recordDateTimeCol="DateTimeOriginal") 
 rect(0, 0, 6, 0.5, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transparent")
 rect(18, 0, 24, 0.5, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transparent")
@@ -182,10 +182,12 @@ rect(18, 0, 24, 0.5, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transpare
 
 ```
 
+No hay suficientes regisros para hacer la grafica. 
+
 # Foto
 
- ![Mazama](https://dlizcano.github.io/activity/fig/jaguar_small.jpg)
- https://dlizcano.github.io/activity/fig/jaguar_large.jpg
+ ![Mazama](https://dlizcano.github.io/activity/fig/puma_small.jpg)
+ https://dlizcano.github.io/activity/fig/puma_large.jpg
 
 # Información de la sesión en R.
 

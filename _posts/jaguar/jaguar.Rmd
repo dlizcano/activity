@@ -154,7 +154,7 @@ paca_window
 
 # Grafica actividad
 
-```{r eval=TRUE}
+```{r eval=FALSE}
 
 
 # make shorter table
@@ -181,10 +181,12 @@ rect(18, 0, 24, 0.5, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transpare
 
 
 ```
+no hay suficientes registros para hacer la grafica.
+
 
 # Foto
 
- ![Mazama](https://dlizcano.github.io/activity/fig/jaguar_small.jpg)
+ ![Jaguar](https://dlizcano.github.io/activity/fig/jaguar_small.jpg)
  https://dlizcano.github.io/activity/fig/jaguar_large.jpg
 
 # Información de la sesión en R.

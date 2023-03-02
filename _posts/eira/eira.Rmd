@@ -1,7 +1,7 @@
 ---
-title: "Activity Pattern for tamandua"
+title: "Activity Pattern for tayra"
 description: |
-  Activity Pattern for _Tamandua tetradactyla_
+  Activity Pattern for _Eira barbara_
 author:
   - name: Diego J. Lizcano  
     url: http://dlizcano.github.io/
@@ -17,7 +17,7 @@ highlight: pygments
 creative_commons: CC BY-SA
 citation_url: https://dlizcano.github.io/activity
 base_url: https://dlizcano.github.io/activity
-preview: https://dlizcano.github.io/activity/fig/tamandua.png
+preview: https://dlizcano.github.io/activity/fig/eira.png
 twitter:
   site: "@rstudio"
   creator: "@dlizcano"
@@ -35,11 +35,11 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 # Descripción
 
-El oso melero u oso hormiguero amazónico (_Tamandua tetradactyla_) es una especie de tamandúa de Sur América. Es un animal solitario, que vive en selvas y de sabanas áridas. Se alimenta de hormigas, termitas y de abejas. Tiene fuertes garras que usa para romper nidos de insectos o para defenderse.
+la tayra (_Eira barbara_), también llamada viejo de monte, irará, eirá, tolomuco, cabeza de mate, cabeza de viejo, manco, sanjool, hurón mayor o comadreja  es una especie de mamífero carnívoro de la familia Mustelidae. Habita en selvas tropicales desde las planicies costeras de México hasta el norte de Argentina. Mide alrededor de 70 cm y pesa 5 kg. Tiene la cabeza blanquecina o amarilla y es de hábitos arborícolas. Es omnívoro, se alimenta de frutos, insectos, carroña y pequeños vertebrados.
 
 ### Detalles de Wikipedia
 
-https://es.wikipedia.org/wiki/Tamandua_tetradactyla
+https://es.wikipedia.org/wiki/Eira_barbara
 
 
 # Mapa de distribución
@@ -102,20 +102,20 @@ camaras_unique <- st_as_sf(deployment, coords = c("longitude", "latitude"),
 ```
 
 
-### _Tamandua tetradactyla_
+### _Eira barbara_
 
 ```{r eval=TRUE}
 
 
 
-tamandua_selva <- filter(camaras, Species=="Tamandua tetradactyla" & subproject_name==c("Selva Vides", "El Escondite"))
+sp_place <- filter(camaras, Species=="Eira barbara" & subproject_name==c("Selva Vides", "El Escondite"))
 by_sp <- camaras %>%  group_by(Species) %>% tally()
-fotografias <- tamandua_selva %>%  group_by(deployment_id) %>% tally()
-names(fotografias) <-  c("Camara", "Fotos tamandua", "geometry")
+fotografias <- sp_place %>%  group_by(deployment_id) %>% tally()
+names(fotografias) <-  c("Camara", "Fotos tayra", "geometry")
 
 
 library(terra); library(maptiles)
-sierraFebpts <- st_as_sf(tamandua_selva, coords = c("longitude", "latitude"), crs=4326)
+sierraFebpts <- st_as_sf(sp_place, coords = c("longitude", "latitude"), crs=4326)
 sierraBase <- get_tiles(sierraFebpts, provider="OpenTopoMap", zoom = 14)
 #st_crs(sierraFebpts)$epsg
 # plotRGB(sierraBase)
@@ -131,14 +131,14 @@ bb2 <- c(-76.77246, 0.8788705, -76.7505, 0.9008353)
 
 putumayo_osm1 <- read_osm(bb, type="stamen-terrain",  mergeTiles = TRUE) 
 
-tamandua_window <- qtm(putumayo_osm1) + 
+eira_window <- qtm(putumayo_osm1) + 
 #  tm_shape(veg_cover_b) + 
 #      tm_fill("Cobertura", palette = "-Greens", colorNA =NULL, title = "Coberturas", alpha = 0.5) + 
 #    tm_shape(celdas2017) + tm_borders(lwd=1, alpha = .6) + 
 #  tm_shape(rio) +
 #  tm_polygons("Rio", colorNA =NULL, border.col = "blue", palette = "blue") +  #tm_symbols (size = 0.5) +
  tm_shape(fotografias) + # tm_symbols (col="red", size = 0.25) + 
-    tm_bubbles(size = "Fotos tamandua", col = "red", border.col= "red", alpha= 0.5, 
+    tm_bubbles(size = "Fotos tayra", col = "red", border.col= "red", alpha= 0.5, 
                legend.size.is.portrait=TRUE) +
     # tm_dots(col = "Species", size = 0.25, 
     #        shape = 16, title = "Especie", legend.show = TRUE,
@@ -156,11 +156,11 @@ tamandua_window <- qtm(putumayo_osm1) +
   tm_compass(type="arrow", position=c("left", "top"), show.labels = 1)
 
 #plot
-tamandua_window
+eira_window
 
 # tmap_save(tinamu_window, "fig/Vichada/tinamu_map.png", width=1500, height=1000, dpi = 150)
 
-mapview(camaras_unique, cex=1, col.regions = "black") + mapview(fotografias,  cex = "Fotos tamandua", alpha = 0, map.types=c("Esri.WorldImagery", "OpenTopoMap"))
+mapview(camaras_unique, cex=1, col.regions = "black") + mapview(fotografias,  cex = "Fotos tayra", alpha = 0, map.types=c("Esri.WorldImagery", "OpenTopoMap"))
 
 ```
 
@@ -171,13 +171,13 @@ mapview(camaras_unique, cex=1, col.regions = "black") + mapview(fotografias,  ce
 
 
 # make shorter table
-Tamandua <- camaras %>% 
+eira <- camaras %>% 
   dplyr::select(Species, DateTimeOriginal, Date, Time) %>% 
-  dplyr::filter (Species =="Tamandua tetradactyla" )  %>% as.data.frame()
+  dplyr::filter (Species =="Eira barbara" )  %>% as.data.frame()
 
 # par(mar = c(5, 4, 3, 3) + 0.1)
-activityDensity (recordTable = Tamandua,
-                 species     = "Tamandua tetradactyla",
+activityDensity (recordTable = eira,
+                 species     = "Eira barbara",
                  recordDateTimeCol="DateTimeOriginal") 
 rect(0, 0, 6, 0.6, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transparent")
 rect(18, 0, 24, 0.6, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transparent")
@@ -197,8 +197,8 @@ rect(18, 0, 24, 0.6, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transpare
 
 # Foto
 
- ![tamandua](https://dlizcano.github.io/activity/fig/tamandua_small.JPG)
- https://dlizcano.github.io/activity/fig/tamandua_large.JPG
+ ![tamandua](https://dlizcano.github.io/activity/fig/eira_small.JPG)
+ https://dlizcano.github.io/activity/fig/eira_large.JPG
 
 # Información de la sesión en R.
 

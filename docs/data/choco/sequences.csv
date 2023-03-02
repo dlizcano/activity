@@ -1,0 +1,47 @@
+project_id,deployment_id,sequence_id,is_blank,identified_by,wi_taxon_id,class,order,family,genus,species,common_name,uncertainty,start_time,end_time,group_size,age,sex,animal_recognizable,individual_id,individual_animal_notes,behavior,highlighted,markings,cv_confidence,license
+2004791,MANGLAR,5262765,0,Diego Lizcano,89d41ec3-af8a-438a-86dd-4a6cb1819f07,Mammalia,Pilosa,Myrmecophagidae,Tamandua,tetradactyla,Southern Tamandua,,2022-12-19 23:17:16,2022-12-19 23:17:23,1,,,,,,,,,,CC-BY-NC
+2004791,Parque de las raices,5262748,0,Diego Lizcano,25248c94-2e54-4c9d-9939-0d8800296747,Mammalia,Pilosa,Myrmecophagidae,Tamandua,mexicana,Northern Tamandua,,2022-12-31 21:46:53,2022-12-31 21:46:59,1,,,,,,,,,,CC-BY-NC
+2004791,Parque de las raices,5262738,0,Diego Lizcano,c56031a6-f8ce-4929-b6eb-b5253d4e1cdc,Mammalia,Carnivora,Procyonidae,Procyon,cancrivorus,Crab-eating Raccoon,,2022-12-14 03:37:02,2022-12-14 03:37:09,1,,,,,,,,,,CC-BY-NC
+2004791,Parque de las raices,5262751,0,Diego Lizcano,c56031a6-f8ce-4929-b6eb-b5253d4e1cdc,Mammalia,Carnivora,Procyonidae,Procyon,cancrivorus,Crab-eating Raccoon,,2023-01-03 20:41:39,2023-01-03 20:42:36,1,,,,,,,,,,CC-BY-NC
+2004791,MANGLAR,5262766,0,Diego Lizcano,9212982e-8a58-4775-a6ac-e9a43110d8f5,Mammalia,Carnivora,Felidae,Felis,catus,Domestic Cat,,2022-12-26 23:35:52,2022-12-26 23:35:54,1,,,,,,,,,,CC-BY-NC
+2004791,Parque de las raices,5262754,0,Diego Lizcano,c56031a6-f8ce-4929-b6eb-b5253d4e1cdc,Mammalia,Carnivora,Procyonidae,Procyon,cancrivorus,Crab-eating Raccoon,,2023-01-09 03:04:44,2023-01-09 03:04:46,1,,,,,,,,,,CC-BY-NC
+2004791,MANGLAR,5262779,0,Diego Lizcano,ad05b76c-8b77-4892-89eb-38d6c46d02d1,Aves,Pelecaniformes,Ardeidae,Nyctanassa,violacea,Yellow-crowned Night-heron,,2023-01-08 18:06:49,2023-01-08 18:06:59,1,,,,,,,,,,CC-BY-NC
+2004791,MANGLAR,5262780,0,Diego Lizcano,b1352069-a39c-4a84-a949-60044271c0c1,Aves,,,,,Bird,,2023-01-09 18:15:19,2023-01-09 18:15:22,1,,,,,,,,,,CC-BY-NC
+2004791,MANGLAR,5262775,0,Diego Lizcano,07c593cb-bfa3-4cdd-9cdf-403f0c3e62ed,Aves,Pelecaniformes,Ardeidae,,,Ardeidae Family,,2023-01-07 09:23:29,2023-01-07 09:23:43,1,,,,,,,,,,CC-BY-NC
+2004791,MANGLAR,5262777,0,Diego Lizcano,b1352069-a39c-4a84-a949-60044271c0c1,Aves,,,,,Bird,,2023-01-07 18:31:25,2023-01-07 18:31:27,1,,,,,,,,,,CC-BY-NC
+2004791,MANGLAR,5262778,0,Diego Lizcano,b1352069-a39c-4a84-a949-60044271c0c1,Aves,,,,,Bird,,2023-01-08 17:36:16,2023-01-08 17:36:18,1,,,,,,,,,,CC-BY-NC
+2004791,Parque de las raices,5262755,0,Diego Lizcano,f2d233e3-80e3-433d-9687-e29ecc7a467a,Mammalia,,,,,Mammal,,2023-01-10 04:16:59,2023-01-10 04:17:32,1,,,,,,,,,,CC-BY-NC
+2004791,Parque de las raices,5262753,0,Diego Lizcano,4eae4c62-e867-465a-a1f3-536791efa6c4,Aves,Galliformes,Phasianidae,,,Phasianidae Family,,2023-01-07 17:54:16,2023-01-07 17:54:27,1,,,,,,,,,,CC-BY-NC
+2004791,AWAKE.CHACHITA.CAM18,5267826,0,Diego Lizcano,837e12c2-f30c-4875-afeb-32d51938f139,Aves,Galliformes,,,,Galliformes Order,,2023-01-14 15:35:20,2023-01-14 15:35:23,1,,,,,,,,,,CC-BY-NC
+2004791,Parque de las raices,5262742,0,Diego Lizcano,033f2ecb-bf36-4ce1-bf3f-7efcd71fe374,Aves,Gruiformes,Rallidae,Aramides,cajaneus,Grey-necked Wood-rail,,2022-12-17 08:01:18,2022-12-17 08:01:34,1,,,,,,,,,,CC-BY-NC
+2004791,AWAKE.CHACHITA.CAM18,5267832,0,Diego Lizcano,89851bea-765b-431a-bb03-6f821931ebdc,Aves,Galliformes,Phasianidae,Gallus,gallus,Red Junglefowl,,2022-12-18 12:55:10,2022-12-18 12:55:10,1,,,,,,,,,,CC-BY-NC
+2004791,AWAKE.CHACHITA.CAM18,5267836,0,Diego Lizcano,9880b662-dc21-453b-aa2f-dd97338f623b,Mammalia,Rodentia,Muridae,,,Muridae Family,,2022-12-19 02:04:05,2022-12-19 02:04:06,1,,,,,,,,,,CC-BY-NC
+2004791,AWAKE.CHACHITA.CAM18,5267834,0,Diego Lizcano,9880b662-dc21-453b-aa2f-dd97338f623b,Mammalia,Rodentia,Muridae,,,Muridae Family,,2022-12-19 02:07:36,2022-12-19 02:07:38,1,,,,,,,,,,CC-BY-NC
+2004791,Parque de las raices,5262743,0,Diego Lizcano,033f2ecb-bf36-4ce1-bf3f-7efcd71fe374,Aves,Gruiformes,Rallidae,Aramides,cajaneus,Grey-necked Wood-rail,,2022-12-25 17:31:30,2022-12-25 17:31:41,1,,,,,,,,,,CC-BY-NC
+2004791,Parque de las raices,5262744,0,Diego Lizcano,033f2ecb-bf36-4ce1-bf3f-7efcd71fe374,Aves,Gruiformes,Rallidae,Aramides,cajaneus,Grey-necked Wood-rail,,2022-12-27 06:59:51,2022-12-27 06:59:53,1,,,,,,,,,,CC-BY-NC
+2004791,AWAKE.CHACHITA.CAM18,5267838,0,Diego Lizcano,0b62f436-aced-4b92-ad12-4700b7185c79,Aves,Passeriformes,,,,Passeriformes Order,,2022-12-27 15:01:41,2022-12-27 15:01:41,1,,,,,,,,,,CC-BY-NC
+2004791,Parque de las raices,5262745,0,Diego Lizcano,b1352069-a39c-4a84-a949-60044271c0c1,Aves,,,,,Bird,,2022-12-28 16:11:35,2022-12-28 16:12:07,1,,,,,,,,,,CC-BY-NC
+2004791,AWAKE.CHACHITA.CAM18,5267837,0,Diego Lizcano,837e12c2-f30c-4875-afeb-32d51938f139,Aves,Galliformes,,,,Galliformes Order,,2022-12-29 11:19:58,2022-12-29 11:20:00,1,,,,,,,,,,CC-BY-NC
+2004791,AWAKE.CHACHITA.CAM18,5267840,0,Diego Lizcano,3d80f1d6-b1df-4966-9ff4-94053c7a902a,Mammalia,Carnivora,Canidae,Canis,familiaris,Domestic Dog,,2022-12-30 11:57:02,2022-12-30 11:57:03,1,,,,,,,,,,CC-BY-NC
+2004791,Parque de las raices,5262747,0,Diego Lizcano,4ac36fff-912b-467a-8dab-95ee49d26787,Mammalia,Didelphimorphia,Didelphidae,Didelphis,marsupialis,Common Opossum,,2022-12-31 01:44:39,2022-12-31 01:44:41,1,,,,,,,,,,CC-BY-NC
+2004791,Parque de las raices,5262749,0,Diego Lizcano,b1352069-a39c-4a84-a949-60044271c0c1,Aves,,,,,Bird,,2022-12-31 17:45:07,2022-12-31 17:45:09,1,,,,,,,,,,CC-BY-NC
+2004791,MANGLAR,5262767,0,Diego Lizcano,033f2ecb-bf36-4ce1-bf3f-7efcd71fe374,Aves,Gruiformes,Rallidae,Aramides,cajaneus,Grey-necked Wood-rail,,2023-01-01 15:25:05,2023-01-01 15:25:07,1,,,,,,,,,,CC-BY-NC
+2004791,AWAKE.CHACHITA.CAM18,5267822,0,Diego Lizcano,9880b662-dc21-453b-aa2f-dd97338f623b,Mammalia,Rodentia,Muridae,,,Muridae Family,,2023-01-03 02:54:46,2023-01-03 02:54:46,1,,,,,,,,,,CC-BY-NC
+2004791,Parque de las raices,5262750,0,Diego Lizcano,90d950db-2106-4bd9-a4c1-777604c3eada,Mammalia,Rodentia,,,,Rodent,,2023-01-03 05:27:33,2023-01-03 05:27:36,1,,,,,,,,,,CC-BY-NC
+2004791,AWAKE.CHACHITA.CAM18,5267823,0,Diego Lizcano,85f6436b-bcc1-4581-9589-2bb4d48491b7,Mammalia,Carnivora,Mephitidae,,,Skunk Family,,2023-01-04 23:49:15,2023-01-04 23:49:15,1,,,,,,,,,,CC-BY-NC
+2004791,AWAKE.CHACHITA.CAM18,5267820,0,Diego Lizcano,4ac36fff-912b-467a-8dab-95ee49d26787,Mammalia,Didelphimorphia,Didelphidae,Didelphis,marsupialis,Common Opossum,,2023-01-05 19:58:51,2023-01-05 19:58:58,1,,,,,,,,,,CC-BY-NC
+2004791,AWAKE.CHACHITA.CAM18,5267825,0,Diego Lizcano,90d950db-2106-4bd9-a4c1-777604c3eada,Mammalia,Rodentia,,,,Rodent,,2023-01-05 22:10:05,2023-01-05 22:10:05,1,,,,,,,,,,CC-BY-NC
+2004791,MANGLAR,5262769,0,Diego Lizcano,b1352069-a39c-4a84-a949-60044271c0c1,Aves,,,,,Bird,,2023-01-05 23:59:05,2023-01-05 23:59:07,1,,,,,,,,,,CC-BY-NC
+2004791,MANGLAR,5262770,0,Diego Lizcano,b1352069-a39c-4a84-a949-60044271c0c1,Aves,,,,,Bird,,2023-01-06 01:10:19,2023-01-06 01:10:22,1,,,,,,,,,,CC-BY-NC
+2004791,Parque de las raices,5262752,0,Diego Lizcano,4ac36fff-912b-467a-8dab-95ee49d26787,Mammalia,Didelphimorphia,Didelphidae,Didelphis,marsupialis,Common Opossum,,2023-01-06 21:50:13,2023-01-06 21:50:31,1,,,,,,,,,,CC-BY-NC
+2004791,MANGLAR,5262773,0,Diego Lizcano,b1352069-a39c-4a84-a949-60044271c0c1,Aves,,,,,Bird,,2023-01-07 06:21:40,2023-01-07 06:21:42,1,,,,,,,,,,CC-BY-NC
+2004791,MANGLAR,5262774,0,Diego Lizcano,b1352069-a39c-4a84-a949-60044271c0c1,Aves,,,,,Bird,,2023-01-07 07:32:32,2023-01-07 07:32:34,1,,,,,,,,,,CC-BY-NC
+2004791,AWAKE.CHACHITA.CAM18,5267830,0,Diego Lizcano,90d950db-2106-4bd9-a4c1-777604c3eada,Mammalia,Rodentia,,,,Rodent,,2023-01-07 22:14:51,2023-01-07 22:14:51,1,,,,,,,,,,CC-BY-NC
+2004791,AWAKE.CHACHITA.CAM18,5267824,0,Diego Lizcano,b1352069-a39c-4a84-a949-60044271c0c1,Aves,,,,,Bird,,2023-01-14 09:34:06,2023-01-14 09:34:06,1,,,,,,,,,,CC-BY-NC
+2004791,AWAKE.CHACHITA.CAM18,5267839,0,Diego Lizcano,837e12c2-f30c-4875-afeb-32d51938f139,Aves,Galliformes,,,,Galliformes Order,,2023-01-17 07:09:18,2023-01-17 07:09:18,1,,,,,,,,,,CC-BY-NC
+2004791,AWAKE.CHACHITA.CAM18,5267827,0,Diego Lizcano,90d950db-2106-4bd9-a4c1-777604c3eada,Mammalia,Rodentia,,,,Rodent,,2022-12-12 23:14:36,2022-12-12 23:15:32,1,,,,,,,,,,CC-BY-NC
+2004791,AWAKE.CHACHITA.CAM18,5267831,0,Diego Lizcano,90d950db-2106-4bd9-a4c1-777604c3eada,Mammalia,Rodentia,,,,Rodent,,2022-12-14 23:44:53,2022-12-14 23:44:53,1,,,,,,,,,,CC-BY-NC
+2004791,Parque de las raices,5262740,0,Diego Lizcano,265cec39-e155-4897-9e7f-06f62fc22af1,Reptilia,Squamata,Iguanidae,Iguana,iguana,Common Green Iguana,,2022-12-15 10:01:05,2022-12-15 10:01:08,1,,,,,,,,,,CC-BY-NC
+2004791,AWAKE.CHACHITA.CAM18,5267833,0,Diego Lizcano,9880b662-dc21-453b-aa2f-dd97338f623b,Mammalia,Rodentia,Muridae,,,Muridae Family,,2022-12-15 19:46:00,2022-12-15 19:46:00,1,,,,,,,,,,CC-BY-NC
+2004791,Parque de las raices,5262741,0,Diego Lizcano,de7c35cc-387c-486d-bcf6-36b9feddcff7,Mammalia,Carnivora,Viverridae,,,Civet Genet Family,,2022-12-16 19:50:50,2022-12-16 19:50:52,1,,,,,,,,,,CC-BY-NC
+2004791,AWAKE.CHACHITA.CAM18,5267835,0,Diego Lizcano,9880b662-dc21-453b-aa2f-dd97338f623b,Mammalia,Rodentia,Muridae,,,Muridae Family,,2022-12-21 19:47:39,2022-12-21 19:47:42,1,,,,,,,,,,CC-BY-NC

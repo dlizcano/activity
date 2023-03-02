@@ -197,8 +197,8 @@ rect(18, 0, 24, 0.6, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transpare
 
 # Foto
 
- ![tamandua](https://dlizcano.github.io/activity/fig/eira_small.JPG)
- https://dlizcano.github.io/activity/fig/eira_large.JPG
+ ![tamandua](https://dlizcano.github.io/activity/fig/eira_small.jpg)
+ https://dlizcano.github.io/activity/fig/eira_large.jpg
 
 # Información de la sesión en R.
 

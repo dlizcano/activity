@@ -4,9 +4,17 @@ description: |
   Activity Patterns
 output_dir: "_site"
 navbar:
+  search: true
   right:
     - text: "Home"
       href: index.html
     - text: "About"
       href: about.html
+  source_url: https://github.com/dlizcano/activity
 output: distill::distill_article
+
+base_url: https://dlizcano.github.io/activity
+collections:
+  posts:
+    disqus: activity patterns for mammals
+    share: [twitter, linkedin]

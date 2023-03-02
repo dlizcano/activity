@@ -54,6 +54,7 @@ library(camtrapR)
 library(raster)
 library(tmap)
 library(tmaptools)
+library(mapview)
 
 source("D:/BoxFiles/Box Sync/github/activity/R/TEAM.R")
 
@@ -97,18 +98,18 @@ camaras$Time <- format(as.POSIXct(camaras$timestamp), format = "%H:%M:%S")
 
 
 
-tamandua_selva <- filter(camaras, Species=="Tamandua tetradactyla" & subproject_name=="Selva Vides")
+tamandua_selva <- filter(camaras, Species=="Tamandua tetradactyla" & subproject_name==c("Selva Vides", "El Escondite"))
 by_sp <- camaras %>%  group_by(Species) %>% tally()
-by_sp_predio <- tamandua_selva %>%  group_by(deployment_id) %>% tally()
-names(by_sp_predio) <-  c("Camara", "Fotos tamandua", "geometry")
+fotografias <- tamandua_selva %>%  group_by(deployment_id) %>% tally()
+names(fotografias) <-  c("Camara", "Fotos tamandua", "geometry")
 
 
 library(terra); library(maptiles)
 sierraFebpts <- st_as_sf(tamandua_selva, coords = c("longitude", "latitude"), crs=4326)
 sierraBase <- get_tiles(sierraFebpts, provider="OpenTopoMap", zoom = 14)
 #st_crs(sierraFebpts)$epsg
-plotRGB(sierraBase)
-points(vect(sierraFebpts))
+# plotRGB(sierraBase)
+# points(vect(sierraFebpts))
 
 
 bb <- c(-76.77936, #0.78941
@@ -126,7 +127,7 @@ tamandua_window <- qtm(putumayo_osm1) +
 #    tm_shape(celdas2017) + tm_borders(lwd=1, alpha = .6) + 
 #  tm_shape(rio) +
 #  tm_polygons("Rio", colorNA =NULL, border.col = "blue", palette = "blue") +  #tm_symbols (size = 0.5) +
- tm_shape(by_sp_predio) + # tm_symbols (col="red", size = 0.25) + 
+ tm_shape(fotografias) + # tm_symbols (col="red", size = 0.25) + 
     tm_bubbles(size = "Fotos tamandua", col = "red", border.col= "red", alpha= 0.5, 
                legend.size.is.portrait=TRUE) +
     # tm_dots(col = "Species", size = 0.25, 
@@ -148,6 +149,8 @@ tamandua_window <- qtm(putumayo_osm1) +
 tamandua_window
 
 # tmap_save(tinamu_window, "fig/Vichada/tinamu_map.png", width=1500, height=1000, dpi = 150)
+
+mapview(camaras, cex=1, col.regions = "black") + mapview(fotografias,  cex = "Fotos tamandua", alpha = 0, map.types=c("Esri.WorldImagery", "OpenTopoMap"))
 
 ```
 

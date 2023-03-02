@@ -1,16 +1,14 @@
 ---
 title: "About this blog"
 description: |
-  Some additional details about the blog
+  Some additional details about this blog
 ---
 
-This blog presents some results for the initiative Awake-CameraTrap.  
+This blog presents some results for the initiative [Awake-CameraTrap in wildlife inisights](https://app.wildlifeinsights.org/initiatives/2000134/Awake-CameraTrap)
 
-https://app.wildlifeinsights.org/initiatives/2000134/Awake-CameraTrap
+Most Animal illustrations are coming from phylopic and were elaborated by [Gabriela Palomo-Munoz](https://twitter.com/gabbspalomo) under licence [CC-BY-NC 3.0](http://creativecommons.org/licenses/by-nc/3.0/)
 
-Most Animal ilustrations are from phylopic and made by Gabriela Palomo-Munoz under licence CC-BY-NC 3.0 http://creativecommons.org/licenses/by-nc/3.0/
-
-Most pictures are from the reserves Selva Vides and el Escondite in Putumayo.
+Most pictures are from the reserves Selva Vides and Escondite in Putumayo and Amargal and Selva Mojada in Choco.
 
  ![Selva Vides](https://dlizcano.github.io/activity/fig/selvavides_logo.jpg)
  

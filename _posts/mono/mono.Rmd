@@ -1,7 +1,7 @@
 ---
-title: "Activity Pattern for jaguar"
+title: "Activity Pattern for squirrel monkey"
 description: |
-  Activity Pattern for _Panthera onca_
+  Activity Pattern for _Saimiri sciureus_
 author:
   - name: Diego J. Lizcano  
     url: http://dlizcano.github.io/
@@ -17,7 +17,7 @@ highlight: pygments
 creative_commons: CC BY-SA
 citation_url: https://dlizcano.github.io/activity
 base_url: https://dlizcano.github.io/activity
-preview: https://dlizcano.github.io/activity/fig/jaguar.png
+preview: https://dlizcano.github.io/activity/fig/mono.png
 twitter:
   site: "@rstudio"
   creator: "@dlizcano"
@@ -35,11 +35,11 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 # Descripción
 
-Mamífero poco común y poco abundante de tamaño grande, Conocido jaguar, tigre mariposo.
+El mono ardilla (_Saimiri sciureus_) es un primate neotropical perteneciente a la familia Cebidae. Posee cola larga, no prensil, con la porción terminal de color negro. En edad adulta, su cuerpo mide entre alrededor de 72±10 cm de la cabeza a la cola, y pesa entre 0.55 kg y 1.25 kg. Se caracteriza por una máscara facial blanca en el rostro.
 
 ### Detalles de Wikipedia
 
-https://es.wikipedia.org/wiki/Panthera_onca
+https://es.wikipedia.org/wiki/Saimiri_sciureus
 
 
 # Mapa de distribución
@@ -54,21 +54,27 @@ library(camtrapR)
 library(raster)
 library(tmap)
 library(tmaptools)
+library(mapview)
 
-# source("D:/BoxFiles/Box Sync/CodigoR/patrones_actividad/R/TEAM.R")
+source("D:/BoxFiles/Box Sync/github/activity/R/TEAM.R")
 
-source("C:/Users/silvi/Documents/GitHub/activity/docs/R/TEAM.R")
+# source("C:/Users/silvi/Documents/GitHub/activity/docs/R/TEAM.R")
 
 ##### Read datos.raw
 ##### Read datos.raw
-# deployment <- read_csv("D:/BoxFiles/Box Sync/CodigoR/patrones_actividad/data/deployments.csv")
+deployment <- read_csv("D:/BoxFiles/Box Sync/github/activity/data/deployments.csv")
 
-deployment <- read_csv("C:/Users/silvi/Documents/GitHub/activity/data/deployments.csv")
+deployment1 <- read_csv("D:/BoxFiles/Box Sync/github/activity/data/deployments_mojada.csv")
+deployment2 <- read_csv("D:/BoxFiles/Box Sync/github/activity/data/deployments_amarg.csv")
+# deployment <- rbind(deployment1, deployment2)
 
-# images <- read_csv("D:/BoxFiles/Box Sync/CodigoR/patrones_actividad/data/images.csv")
+images <- read_csv("D:/BoxFiles/Box Sync/github/activity/data/images.csv")
 # full.data <- left_join(images, deployment)
 
-images <- read_csv("C:/Users/silvi/Documents/GitHub/activity/data/images.csv")
+images1 <- read_csv("D:/BoxFiles/Box Sync/github/activity/data/images_mojada.csv")
+images2 <- read_csv("D:/BoxFiles/Box Sync/github/activity/data/images_amarg.csv")
+# images <- rbind(images1, images2)
+
 full.data <- left_join(images, deployment)
 
 #### elimina dos camaras sin coordenadas
@@ -93,61 +99,73 @@ camaras$DateTimeOriginal <- as.character(strptime (camaras$timestamp, "%Y-%m-%d 
 
 camaras$Date <- as.character(strptime (camaras$timestamp, "%Y-%m-%d"))
 camaras$Time <- format(as.POSIXct(camaras$timestamp), format = "%H:%M:%S")
+
+camaras_unique <- st_as_sf(deployment, coords = c("longitude", "latitude"), 
+                        crs = "+proj=longlat +ellps=GRS80 +no_defs")
 ###################
 
+```
 
 
-paca_selva <- filter(camaras, Species=="Panthera onca" & subproject_name=="Selva Vides")
+### _Saimiri sciureus_
+
+```{r eval=TRUE}
+
+
+
+sp_place <- filter(camaras, Species=="Saimiri sciureus" )#& subproject_name==c("Selva Vides", "El Escondite"))
 by_sp <- camaras %>%  group_by(Species) %>% tally()
-by_sp_predio <- paca_selva %>%  group_by(deployment_id) %>% tally()
-names(by_sp_predio) <-  c("Camara", "Fotos jaguar", "geometry")
+fotografias <- sp_place %>%  group_by(deployment_id) %>% tally()
+names(fotografias) <-  c("Camara", "Fotos saimiri", "geometry")
 
 
 library(terra); library(maptiles)
-sierraFebpts <- st_as_sf(paca_selva, coords = c("longitude", "latitude"), crs=4326)
-sierraBase <- get_tiles(sierraFebpts, provider="OpenTopoMap", zoom = 14)
+# sierraFebpts <- st_as_sf(sp_place, coords = c("longitude", "latitude"), crs=4326)
+# sierraBase <- get_tiles(sierraFebpts, provider="OpenTopoMap", zoom = 14)
 #st_crs(sierraFebpts)$epsg
-plotRGB(sierraBase)
-points(vect(sierraFebpts))
+# plotRGB(sierraBase)
+# points(vect(sierraFebpts))
 
 
-bb <- c(-76.77936, #0.78941
-        0.80541, 
-        -76.69007, 
-        0.90982)
+bb <- c(-77.50472, #0.78941
+        5.535, 
+        -77.49541, 
+        5.579 )
 
 bb2 <- c(-76.77246, 0.8788705, -76.7505, 0.9008353)
 
-putumayo_osm1 <- read_osm(bb, type="stamen-terrain",  mergeTiles = TRUE) 
-
-paca_window <- qtm(putumayo_osm1) + 
-#  tm_shape(veg_cover_b) + 
-#      tm_fill("Cobertura", palette = "-Greens", colorNA =NULL, title = "Coberturas", alpha = 0.5) + 
-#    tm_shape(celdas2017) + tm_borders(lwd=1, alpha = .6) + 
-#  tm_shape(rio) +
-#  tm_polygons("Rio", colorNA =NULL, border.col = "blue", palette = "blue") +  #tm_symbols (size = 0.5) +
- tm_shape(by_sp_predio) + # tm_symbols (col="red", size = 0.25) + 
-    tm_bubbles(size = "Fotos jaguar", col = "red", border.col= "red", alpha= 0.5, 
-               legend.size.is.portrait=TRUE) +
-    # tm_dots(col = "Species", size = 0.25, 
-    #        shape = 16, title = "Especie", legend.show = TRUE,
-    #       legend.is.portrait = TRUE, legend.z = NA) +
-    tm_layout(scale = 0.9, #font symbol sizes,are controlled by this value 
-            outer.margins = c(0,.1,0,.2), #bottom, left, top, right margin
-            legend.position = c(1.01,.1), 
-            legend.outside.size = 0.1,
-            legend.title.size = 1.6,
-            legend.height = 0.9,
-            legend.width = 1.5,
-            legend.text.size = 1, 
-            legend.hist.size = 0.5) + 
-  tm_layout(frame=T) + tm_scale_bar(text.size = 0.65) + 
-  tm_compass(type="arrow", position=c("left", "top"), show.labels = 1)
-
-#plot
-paca_window
+# putumayo_osm1 <- read_osm(bb, type="stamen-terrain",  mergeTiles = TRUE) 
+# 
+# ocelote_window <- qtm(putumayo_osm1) + 
+# #  tm_shape(veg_cover_b) + 
+# #      tm_fill("Cobertura", palette = "-Greens", colorNA =NULL, title = "Coberturas", alpha = 0.5) + 
+# #    tm_shape(celdas2017) + tm_borders(lwd=1, alpha = .6) + 
+# #  tm_shape(rio) +
+# #  tm_polygons("Rio", colorNA =NULL, border.col = "blue", palette = "blue") +  #tm_symbols (size = 0.5) +
+#  tm_shape(fotografias) + # tm_symbols (col="red", size = 0.25) + 
+#     tm_bubbles(size = "Fotos ocelote", col = "red", border.col= "red", alpha= 0.5, 
+#                legend.size.is.portrait=TRUE) +
+#     # tm_dots(col = "Species", size = 0.25, 
+#     #        shape = 16, title = "Especie", legend.show = TRUE,
+#     #       legend.is.portrait = TRUE, legend.z = NA) +
+#     tm_layout(scale = 0.9, #font symbol sizes,are controlled by this value 
+#             outer.margins = c(0,.1,0,.2), #bottom, left, top, right margin
+#             legend.position = c(1.01,.1), 
+#             legend.outside.size = 0.1,
+#             legend.title.size = 1.6,
+#             legend.height = 0.9,
+#             legend.width = 1.5,
+#             legend.text.size = 1, 
+#             legend.hist.size = 0.5) + 
+#   tm_layout(frame=T) + tm_scale_bar(text.size = 0.65) + 
+#   tm_compass(type="arrow", position=c("left", "top"), show.labels = 1)
+# 
+# #plot
+# ocelote_window
 
 # tmap_save(tinamu_window, "fig/Vichada/tinamu_map.png", width=1500, height=1000, dpi = 150)
+
+mapview(camaras_unique, cex=1, col.regions = "black") + mapview(fotografias,  cex = "Fotos saimiri", alpha = 0, map.types=c("Esri.WorldImagery", "OpenTopoMap"))
 
 ```
 
@@ -158,16 +176,16 @@ paca_window
 
 
 # make shorter table
-Jaguar <- camaras %>% 
+eira <- camaras %>% 
   dplyr::select(Species, DateTimeOriginal, Date, Time) %>% 
-  dplyr::filter (Species =="Panthera onca" )  %>% as.data.frame()
+  dplyr::filter (Species =="Saimiri sciureus" )  %>% as.data.frame()
 
 # par(mar = c(5, 4, 3, 3) + 0.1)
-activityDensity (recordTable = Jaguar,
-                 species     = "Panthera onca",
+activityDensity (recordTable = eira,
+                 species     = "Saimiri sciureus",
                  recordDateTimeCol="DateTimeOriginal") 
-rect(0, 0, 6, 0.5, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transparent")
-rect(18, 0, 24, 0.5, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transparent")
+rect(0, 0, 6, 0.6, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transparent")
+rect(18, 0, 24, 0.6, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transparent")
 
 
 # activityDensity (recordTable = cuniculus,
@@ -184,8 +202,8 @@ rect(18, 0, 24, 0.5, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transpare
 
 # Foto
 
- ![Mazama](https://dlizcano.github.io/activity/fig/jaguar_small.jpg)
- https://dlizcano.github.io/activity/fig/jaguar_large.jpg
+ [![monkey](https://dlizcano.github.io/activity/fig/saimiri_small.jpg)](
+ https://dlizcano.github.io/activity/fig/saimiri_large.jpg)
 
 # Información de la sesión en R.
 

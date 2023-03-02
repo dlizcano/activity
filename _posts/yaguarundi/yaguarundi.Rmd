@@ -94,12 +94,17 @@ camaras$DateTimeOriginal <- as.character(strptime (camaras$timestamp, "%Y-%m-%d 
 
 camaras$Date <- as.character(strptime (camaras$timestamp, "%Y-%m-%d"))
 camaras$Time <- format(as.POSIXct(camaras$timestamp), format = "%H:%M:%S")
+
+#camaras
+camaras_unique <- st_as_sf(deployment, coords = c("longitude", "latitude"), 
+                        crs = "+proj=longlat +ellps=GRS80 +no_defs")
+
 ###################
 
 ```
 
 
-#### _Herpailurus yagouaroundi_
+### _Herpailurus yagouaroundi_
 
 ```{r eval=TRUE}
 
@@ -159,7 +164,7 @@ bb3 <- c(-76.59668,  0.7690189, -76.57471, 0.7909837)
 # tmap_save(tinamu_window, "fig/Vichada/tinamu_map.png", width=1500, height=1000, dpi = 150)
 
 
-mapview(fotografias,  cex = "Fotos yaguarundi", alpha = 0, map.types=c("Esri.WorldImagery", "OpenTopoMap"))
+mapview(camaras_unique, cex=1, col.regions = "black") + mapview(fotografias,  cex = "Fotos yaguarundi", alpha = 0, map.types=c("Esri.WorldImagery", "OpenTopoMap"))
 
 ```
 
@@ -178,8 +183,8 @@ Mazama <- camaras %>%
 activityDensity (recordTable = Mazama,
                  species     = "Herpailurus yagouaroundi",
                  recordDateTimeCol="DateTimeOriginal") 
-rect(0, 0, 6, 0.5, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transparent")
-rect(18, 0, 24, 0.5, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transparent")
+rect(0, 0, 6, 0.6, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transparent")
+rect(18, 0, 24, 0.6, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transparent")
 
 
 # activityDensity (recordTable = cuniculus,

@@ -1,0 +1,213 @@
+---
+title: "Activity Pattern for ocelot"
+description: |
+  Activity Pattern for _Leopardus pardalis_
+author:
+  - name: Diego J. Lizcano  
+    url: http://dlizcano.github.io/
+    affiliation: Awake Travel
+    affiliation_url: https://monitoreo-acustico.netlify.app/
+    orcid_id: 0000-0002-9648-0576
+date: "`r Sys.Date()`"
+output:
+  distill::distill_article:
+    self_contained: false
+code_folding: true
+highlight: pygments
+creative_commons: CC BY-SA
+citation_url: https://dlizcano.github.io/activity
+base_url: https://dlizcano.github.io/activity
+preview: https://dlizcano.github.io/activity/fig/ocelot.png
+twitter:
+  site: "@rstudio"
+  creator: "@dlizcano"
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+# Learn more about creating blogs with Distill at:
+# https://rstudio.github.io/distill/blog.html
+
+```
+
+
+# Descripción
+
+El ocelote (_Leopardus pardalis_)es una especie de felino de mediano tamaño, con una longitud de cabeza y cuerpo de 70 - 90 cm, cola relativamente corta (30-40 cm, un 45% de la longitud de cabeza y cuerpo) y un peso en el entorno de los 11 kg. En Mesoamérica, es el tercer felino más grande después del jaguar y del puma, y el más grande de los pequeños felinos manchados,
+
+### Detalles de Wikipedia
+
+https://es.wikipedia.org/wiki/Leopardus_pardalis
+
+
+# Mapa de distribución
+
+```{r}
+
+################
+library(readr)
+library(tidyverse)
+library(sf)
+library(camtrapR)
+library(raster)
+library(tmap)
+library(tmaptools)
+library(mapview)
+
+source("D:/BoxFiles/Box Sync/github/activity/R/TEAM.R")
+
+# source("C:/Users/silvi/Documents/GitHub/activity/docs/R/TEAM.R")
+
+##### Read datos.raw
+##### Read datos.raw
+# deployment <- read_csv("D:/BoxFiles/Box Sync/CodigoR/patrones_actividad/data/deployments.csv")
+
+deployment1 <- read_csv("D:/BoxFiles/Box Sync/github/activity/data/deployments_mojada.csv")
+deployment2 <- read_csv("D:/BoxFiles/Box Sync/github/activity/data/deployments_amarg.csv")
+deployment <- rbind(deployment1, deployment2)
+
+# images <- read_csv("D:/BoxFiles/Box Sync/CodigoR/patrones_actividad/data/images.csv")
+# full.data <- left_join(images, deployment)
+
+images1 <- read_csv("D:/BoxFiles/Box Sync/github/activity/data/images_mojada.csv")
+images2 <- read_csv("D:/BoxFiles/Box Sync/github/activity/data/images_amarg.csv")
+images <- rbind(images1, images2)
+
+full.data <- left_join(images, deployment)
+
+#### elimina dos camaras sin coordenadas
+#ind <- which(is.na(datos.raw1$Lat))
+#datos.raw <- datos.raw1[-ind,]
+
+#### make sf object
+datos.raw_sf <- st_as_sf(full.data, coords = c("longitude", "latitude"), 
+                        crs = "+proj=longlat +ellps=GRS80 +no_defs")
+# make sf
+camaras <-  st_transform (datos.raw_sf, "+proj=longlat +ellps=GRS80 +no_defs") 
+
+# make species mat
+mat.per.sp<-f.matrix.creator2(data = full.data, year = 2022)
+# mat.per.sp <- mat.per.sp[-1] # elimina NA 
+sp.names<-names(mat.per.sp) # species names
+
+# fix species for camtrapR
+camaras$species_epitet <- camaras$species
+camaras$Species <- str_c(camaras$genus, camaras$species, sep = " ", collapse = NULL)
+camaras$DateTimeOriginal <- as.character(strptime (camaras$timestamp, "%Y-%m-%d %H:%M:%S"))#sub(" UTC", "", camaras$timestamp) # remove the UTC
+
+camaras$Date <- as.character(strptime (camaras$timestamp, "%Y-%m-%d"))
+camaras$Time <- format(as.POSIXct(camaras$timestamp), format = "%H:%M:%S")
+
+camaras_unique <- st_as_sf(deployment, coords = c("longitude", "latitude"), 
+                        crs = "+proj=longlat +ellps=GRS80 +no_defs")
+###################
+
+```
+
+
+### _Leopardus pardalis_
+
+```{r eval=TRUE}
+
+
+
+sp_place <- filter(camaras, Species=="Leopardus pardalis" )#& subproject_name==c("Selva Vides", "El Escondite"))
+by_sp <- camaras %>%  group_by(Species) %>% tally()
+fotografias <- sp_place %>%  group_by(deployment_id) %>% tally()
+names(fotografias) <-  c("Camara", "Fotos ocelote", "geometry")
+
+
+library(terra); library(maptiles)
+sierraFebpts <- st_as_sf(sp_place, coords = c("longitude", "latitude"), crs=4326)
+sierraBase <- get_tiles(sierraFebpts, provider="OpenTopoMap", zoom = 14)
+#st_crs(sierraFebpts)$epsg
+# plotRGB(sierraBase)
+# points(vect(sierraFebpts))
+
+
+bb <- c(-77.50472, #0.78941
+        5.535, 
+        -77.49541, 
+        5.579 )
+
+bb2 <- c(-76.77246, 0.8788705, -76.7505, 0.9008353)
+
+# putumayo_osm1 <- read_osm(bb, type="stamen-terrain",  mergeTiles = TRUE) 
+# 
+# ocelote_window <- qtm(putumayo_osm1) + 
+# #  tm_shape(veg_cover_b) + 
+# #      tm_fill("Cobertura", palette = "-Greens", colorNA =NULL, title = "Coberturas", alpha = 0.5) + 
+# #    tm_shape(celdas2017) + tm_borders(lwd=1, alpha = .6) + 
+# #  tm_shape(rio) +
+# #  tm_polygons("Rio", colorNA =NULL, border.col = "blue", palette = "blue") +  #tm_symbols (size = 0.5) +
+#  tm_shape(fotografias) + # tm_symbols (col="red", size = 0.25) + 
+#     tm_bubbles(size = "Fotos ocelote", col = "red", border.col= "red", alpha= 0.5, 
+#                legend.size.is.portrait=TRUE) +
+#     # tm_dots(col = "Species", size = 0.25, 
+#     #        shape = 16, title = "Especie", legend.show = TRUE,
+#     #       legend.is.portrait = TRUE, legend.z = NA) +
+#     tm_layout(scale = 0.9, #font symbol sizes,are controlled by this value 
+#             outer.margins = c(0,.1,0,.2), #bottom, left, top, right margin
+#             legend.position = c(1.01,.1), 
+#             legend.outside.size = 0.1,
+#             legend.title.size = 1.6,
+#             legend.height = 0.9,
+#             legend.width = 1.5,
+#             legend.text.size = 1, 
+#             legend.hist.size = 0.5) + 
+#   tm_layout(frame=T) + tm_scale_bar(text.size = 0.65) + 
+#   tm_compass(type="arrow", position=c("left", "top"), show.labels = 1)
+# 
+# #plot
+# ocelote_window
+
+# tmap_save(tinamu_window, "fig/Vichada/tinamu_map.png", width=1500, height=1000, dpi = 150)
+
+mapview(camaras_unique, cex=1, col.regions = "black") + mapview(fotografias,  cex = "Fotos ocelote", alpha = 0, map.types=c("Esri.WorldImagery", "OpenTopoMap"))
+
+```
+
+
+# Grafica actividad
+
+```{r eval=TRUE}
+
+
+# make shorter table
+eira <- camaras %>% 
+  dplyr::select(Species, DateTimeOriginal, Date, Time) %>% 
+  dplyr::filter (Species =="Leopardus pardalis" )  %>% as.data.frame()
+
+# par(mar = c(5, 4, 3, 3) + 0.1)
+activityDensity (recordTable = eira,
+                 species     = "Leopardus pardalis",
+                 recordDateTimeCol="DateTimeOriginal") 
+rect(0, 0, 6, 0.6, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transparent")
+rect(18, 0, 24, 0.6, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transparent")
+
+
+# activityDensity (recordTable = cuniculus,
+#                  species     = "Cuniculus paca",
+#                  writePNG = TRUE,
+#                  createDir=TRUE,
+#                  plotR = TRUE,
+#                  pngMaxPix = 800,
+#                  plotDirectory = "D:/BoxFiles/Box Sync/CodigoR/patrones_actividad/fig/paca_activ.png"
+#                  )
+
+
+```
+
+# Foto
+
+ [![ocelot](https://dlizcano.github.io/activity/fig/ocelot_small.jpg)](
+ https://dlizcano.github.io/activity/fig/ocelot_large.jpg)
+
+# Información de la sesión en R.
+
+```{r sesion, results='markup'}
+print(sessionInfo(), locale = FALSE)
+```
+

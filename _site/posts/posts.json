@@ -68,6 +68,23 @@
     "input_file": "yaguarundi.knit.md"
   },
   {
+    "path": "posts/ocelot/",
+    "title": "Activity Pattern for ocelot",
+    "description": "Activity Pattern for _Leopardus pardalis_",
+    "author": [
+      {
+        "name": "Diego J. Lizcano",
+        "url": "http://dlizcano.github.io/"
+      }
+    ],
+    "date": "2023-03-01",
+    "categories": [],
+    "contents": "\r\nDescripción\r\nEl ocelote (Leopardus pardalis)es una especie de felino de mediano tamaño, con una longitud de cabeza y cuerpo de 70 - 90 cm, cola relativamente corta (30-40 cm, un 45% de la longitud de cabeza y cuerpo) y un peso en el entorno de los 11 kg. En Mesoamérica, es el tercer felino más grande después del jaguar y del puma, y el más grande de los pequeños felinos manchados,\r\nDetalles de Wikipedia\r\nhttps://es.wikipedia.org/wiki/Leopardus_pardalis\r\nMapa de distribución\r\n\r\n\r\n\r\nLeopardus pardalis\r\n\r\n\r\n\r\nGrafica actividad\r\n\r\n\r\n\r\nFoto\r\n\r\nInformación de la sesión en R.\r\n\r\nR version 4.2.2 (2022-10-31 ucrt)\r\nPlatform: x86_64-w64-mingw32/x64 (64-bit)\r\nRunning under: Windows 10 x64 (build 14393)\r\n\r\nMatrix products: default\r\n\r\nattached base packages:\r\n[1] stats     graphics  grDevices utils     datasets  methods  \r\n[7] base     \r\n\r\nother attached packages:\r\n [1] maptiles_0.4.0  terra_1.7-3     plyr_1.8.8      mapview_2.11.0 \r\n [5] tmaptools_3.1-1 tmap_3.3-3      raster_3.6-14   sp_1.6-0       \r\n [9] camtrapR_2.2.0  sf_1.0-9        lubridate_1.9.2 forcats_1.0.0  \r\n[13] stringr_1.5.0   dplyr_1.1.0     purrr_1.0.1     tidyr_1.3.0    \r\n[17] tibble_3.1.8    ggplot2_3.4.1   tidyverse_2.0.0 readr_2.1.4    \r\n\r\nloaded via a namespace (and not attached):\r\n [1] leafem_0.2.0            colorspace_2.1-0       \r\n [3] ellipsis_0.3.2          class_7.3-20           \r\n [5] leaflet_2.1.1           satellite_1.0.4        \r\n [7] base64enc_0.1-3         dichromat_2.0-0.1      \r\n [9] rstudioapi_0.14         proxy_0.4-27           \r\n[11] bit64_4.0.5             fansi_1.0.4            \r\n[13] codetools_0.2-18        splines_4.2.2          \r\n[15] downlit_0.4.2           cachem_1.0.7           \r\n[17] knitr_1.42              jsonlite_1.8.4         \r\n[19] secr_4.5.8              png_0.1-8              \r\n[21] compiler_4.2.2          Matrix_1.5-3           \r\n[23] fastmap_1.1.0           overlap_0.3.4          \r\n[25] cli_3.6.0               s2_1.1.2               \r\n[27] leaflet.providers_1.9.0 htmltools_0.5.4        \r\n[29] tools_4.2.2             gtable_0.3.1           \r\n[31] glue_1.6.2              wk_0.7.1               \r\n[33] Rcpp_1.0.10             jquerylib_0.1.4        \r\n[35] vctrs_0.5.2             svglite_2.1.1          \r\n[37] nlme_3.1-160            leafsync_0.1.0         \r\n[39] crosstalk_1.2.0         lwgeom_0.2-11          \r\n[41] xfun_0.37               timechange_0.2.0       \r\n[43] lifecycle_1.0.3         XML_3.99-0.13          \r\n[45] MASS_7.3-58.1           scales_1.2.1           \r\n[47] vroom_1.6.1             hms_1.1.2              \r\n[49] slippymath_0.3.1        parallel_4.2.2         \r\n[51] RColorBrewer_1.1-3      yaml_2.3.7             \r\n[53] curl_5.0.0              memoise_2.0.1          \r\n[55] sass_0.4.5              distill_1.5            \r\n[57] stringi_1.7.12          highr_0.10             \r\n[59] leafpop_0.1.0           e1071_1.7-13           \r\n[61] rlang_1.0.6             pkgconfig_2.0.3        \r\n[63] systemfonts_1.0.4       evaluate_0.20          \r\n[65] lattice_0.20-45         htmlwidgets_1.6.1      \r\n[67] bit_4.0.5               tidyselect_1.2.0       \r\n[69] magrittr_2.0.3          R6_2.5.1               \r\n[71] generics_0.1.3          DBI_1.1.3              \r\n[73] pillar_1.8.1            withr_2.5.0            \r\n[75] mgcv_1.8-41             units_0.8-1            \r\n[77] stars_0.6-0             abind_1.4-5            \r\n[79] crayon_1.5.2            uuid_1.1-0             \r\n[81] KernSmooth_2.23-20      utf8_1.2.3             \r\n[83] RcppNumerical_0.4-0     tzdb_0.3.0             \r\n[85] rmarkdown_2.20          grid_4.2.2             \r\n[87] data.table_1.14.8       digest_0.6.31          \r\n[89] classInt_0.4-8          webshot_0.5.4          \r\n[91] brew_1.0-8              RcppParallel_5.1.6     \r\n[93] stats4_4.2.2            munsell_0.5.0          \r\n[95] viridisLite_0.4.1       bslib_0.4.2            \r\n\r\n\r\n\r\n\r\n",
+    "preview": "https://dlizcano.github.io/activity/fig/ocelot.png",
+    "last_modified": "2023-03-01T23:17:51-05:00",
+    "input_file": "ocelot.knit.md"
+  },
+  {
     "path": "posts/americana/",
     "title": "Activity Pattern for venado rojo",
     "description": "Activity Pattern for _Mazama americana_",

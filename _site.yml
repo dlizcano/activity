@@ -12,7 +12,6 @@ navbar:
       href: about.html
   source_url: https://github.com/dlizcano/activity
 output: distill::distill_article
-
 base_url: https://dlizcano.github.io/activity
 collections:
   posts:

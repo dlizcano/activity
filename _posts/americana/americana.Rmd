@@ -232,7 +232,7 @@ for (i in 1:length(Mazama)){
 
 # Foto
 
- [![Mazama](https://dlizcano.github.io/activity/fig/Mazama_americana_small.jpg)]( https://dlizcano.github.io/activity/fig/Mazama_americana_large.jpg)
+ [![Mazama](https://dlizcano.github.io/activity/fig/Mazama_americana_small.jpg)]( https://dlizcano.github.io/activity/fig/Mazama_ameriacana_large.jpg)
 
 # Información de la sesión en R.
 

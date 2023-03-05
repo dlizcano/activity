@@ -1,7 +1,7 @@
 ---
-title: "Activity Pattern for yaguarundí"
+title: "Activity Pattern for danta"
 description: |
-  Activity Pattern for _Herpailurus yagouaroundi_
+  Activity Pattern for _Tapirus terrestris_
 author:
   - name: Diego J. Lizcano  
     url: http://dlizcano.github.io/
@@ -35,11 +35,11 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 # Descripción
 
-Es más grande que un gato doméstico, con cráneo y cara muy similares a los del puma (_Puma concolor_). Presenta dos formas en la coloración de su pelaje: una de color castaño rojizo, y otra parda casi negra o grisácea. Este felino alcanza una longitud de 50 a 70 cm de largo, más la cola que mide de 30 a 60 cm. Mide en promedio 33 cm de altura.
+La Danta (_Tapirus terrestris_) es el mayor mamífero terrestre de Sudamérica. Mide de 1,7 a 2,5 m de largo y pesa hasta 300 kg; cola de 5 a 10 cm de largo; a la cruz mide de 75 a 110 cm; cuerpo grisáceo, a pardo oscuro, orejas pardas con las puntas blancas. Presenta una trompa en el labio superior. Lleva una crin estrecha y erecta desde la cola hasta el cuello.
 
 ### Detalles de Wikipedia
 
-https://es.wikipedia.org/wiki/Herpailurus_yagouaroundi
+https://es.wikipedia.org/wiki/Tapirus_terrestris
 
 
 # Mapa de distribución
@@ -106,15 +106,15 @@ camaras_unique <- deployment %>%
 ```
 
 
-### _Herpailurus yagouaroundi_
+### _Tapirus terrestris_
 
 ```{r eval=TRUE}
 
 
-yagouaroundi_selva <- filter(camaras, Species=="Herpailurus yagouaroundi")# & subproject_name=="El Escondite")
+yagouaroundi_selva <- filter(camaras, Species=="Tapirus terrestris")#  & subproject_name=="El Escondite")
 by_sp <- camaras %>%  group_by(Species) %>% tally()
 fotografias <- yagouaroundi_selva %>%  group_by(deployment_id) %>% tally()
-names(fotografias) <-  c("Camara", "Fotos yaguarundi", "geometry")
+names(fotografias) <-  c("Camara", "Fotos danta", "geometry")
 
 
 # library(terra); library(maptiles)
@@ -166,7 +166,7 @@ bb3 <- c(-76.59668,  0.7690189, -76.57471, 0.7909837)
 # tmap_save(tinamu_window, "fig/Vichada/tinamu_map.png", width=1500, height=1000, dpi = 150)
 
 
-mapview(camaras_unique, cex=1, col.regions = "black") + mapview(fotografias,  cex = "Fotos yaguarundi", alpha = 0, map.types=c("Esri.WorldImagery", "OpenTopoMap"))
+mapview(camaras_unique, cex=1, col.regions = "black") + mapview(fotografias,  cex = "Fotos danta", alpha = 0, map.types=c("Esri.WorldImagery", "OpenTopoMap"))
 
 ```
 
@@ -177,22 +177,22 @@ mapview(camaras_unique, cex=1, col.regions = "black") + mapview(fotografias,  ce
 
 
 # make shorter table
-Mazama <- camaras %>% 
+tapir <- camaras %>% 
   dplyr::select(Species, DateTimeOriginal, Date, Time, anfitrion) %>% 
-  dplyr::filter (Species =="Herpailurus yagouaroundi" )  %>%  as.data.frame() %>% dlply(.(anfitrion)) # return list by anfitrion
+  dplyr::filter (Species =="Tapirus terrestris" )  %>%  as.data.frame() %>% dlply(.(anfitrion)) # return list by anfitrion
 
 
-# for (i in 1:length(Mazama)){
- cat("###", names(Mazama)[2])
-  plot.new( )
+ for (i in 1:length(tapir)){
+ cat("###", names(tapir)[i])
+  # plot.new( )
   plot.window( xlim=c(-1,25), ylim=c(0,1))
   # par(mar = c(5, 4, 3, 3) + 0.1)
-  activityDensity (recordTable = Mazama[[2]],
-                   species     = "Herpailurus yagouaroundi",
+  activityDensity (recordTable = tapir[[i]],
+                   species     = "Tapirus terrestris",
                    recordDateTimeCol="DateTimeOriginal") 
   rect(0, 0, 6, 0.9, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transparent")
   rect(18, 0, 24, 0.9, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transparent")
-# }
+}
 
 # activityDensity (recordTable = cuniculus,
 #                  species     = "Cuniculus paca",
@@ -208,7 +208,7 @@ Mazama <- camaras %>%
 
 # Foto
 
- [![yagouaroundi](https://dlizcano.github.io/activity/fig/yagouaroundi_small.jpg)]( https://dlizcano.github.io/activity/fig/yagouaroundi_large.jpg)
+ [![tapir](https://dlizcano.github.io/activity/fig/yagouaroundi_small.jpg)]( https://dlizcano.github.io/activity/fig/yagouaroundi_large.jpg)
 
 # Información de la sesión en R.
 

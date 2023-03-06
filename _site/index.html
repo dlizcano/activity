@@ -2117,141 +2117,192 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
 <!--radix_placeholder_article_listing-->
-
-
-<script type="application/javascript">
-
-function init_posts_list() {
-
-  function load_image(img) {
-    var src = $(img).attr('data-src');
-    if (src) {
-      $(img).attr('src', src);
-      $(img).on("load", function() {
-        img.removeAttribute('data-src');
-      });
-    }
-  }
-
-  function set_posts_visible(posts, visible) {
-    if (visible) {
-
-      // show bottom border by default
-      $(posts).removeClass('post-preview-last');
-
-      // apply limits if need be
-      var max_posts = 25;
-      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
-      if (apply_limits && posts.length > max_posts) {
-        posts = $(posts).slice(0, max_posts);
-      } else {
-        $('.posts-more a').addClass('hidden');
-      }
-
-      // apply last style
-      $(posts.slice(-1)[0]).addClass('post-preview-last');
-
-      $(posts).removeClass('hidden');
-      $(posts).find('img[data-src]').each(function(i, img) {
-        load_image(img);
-      });
-    } else {
-      $(posts).addClass('hidden');
-    }
-  }
-
-  function apply_hash_filter() {
-
-    // clear active state
-    $('.categories .active').removeClass('active');
-
-    // mark all posts invisible to start
-    set_posts_visible($('.posts-list').children('a'), false);
-
-    // if we have a hash filter
-    if (window.location.hash && window.location.hash.startsWith("#category:")) {
-
-      // mark posts that match the category visible
-      var page_category = window.location.hash.replace(/^#category:/, "");
-      page_category = decodeURIComponent(page_category)
-      var posts = $('.post-metadata').map(function(idx, script) {
-        var metadata = $.parseJSON($(script).html());
-        var post = null;
-        $.each(metadata.categories, function(idx, category) {
-          category = category.replace(/ /g,"_");
-          if ((page_category || '').toLowerCase() === "articles" || category === page_category) {
-            post = $(script).parent().get();
-            return false;
-          }
-        });
-        return post;
-      });
-      set_posts_visible(posts, true);
-
-      // mark the hash active
-      $('.categories li>a[href="' + decodeURIComponent(window.location.hash) + '"]').addClass('active');
-
-      // update the list_caption
-      var list_caption = $('.posts-list-caption');
-      var caption = (page_category || '').toLowerCase() === "articles"
-        ? list_caption.attr('data-caption')
-        : ('Category: ' + page_category.replace(/_/g," "));
-      list_caption.text(caption);
-
-    } else {
-
-      // no hash filter, make all posts visible (subject to max display)
-      set_posts_visible($('.posts-list').children(), true);
-
-      // reset list caption
-      var list_caption = $('.posts-list-caption');
-      list_caption.text(list_caption.attr('data-caption'));
-
-
-    }
-  }
-
-  // more articles
-  function apply_post_limits(apply) {
-    if (apply) {
-      $('.posts-container').addClass('posts-apply-limit');
-      $('.posts-more a').removeClass('hidden');
-    } else {
-      $('.posts-container').removeClass('posts-apply-limit');
-      $('.posts-more a').addClass('hidden');
-    }
-  }
-
-  // click handling for tags
-  $('.dt-tag').click(function(ev) {
-    window.location.hash = '#category:' + $(this).text().replace(/ /g, "_");
-    return false;
-  })
-
-  // hash filter handling
-  apply_hash_filter();
-  $(window).on('hashchange',function() {
-    apply_post_limits(true);
-    apply_hash_filter();
-  });
-
-  // more articles link
-  $('.posts-more a').click(function(e) {
-    e.preventDefault();
-    apply_post_limits(false);
-    apply_hash_filter();
-    return false;
-  });
-
-}
-
-</script>
-
-
+
+
+<script type="application/javascript">
+
+function init_posts_list() {
+
+  function load_image(img) {
+    var src = $(img).attr('data-src');
+    if (src) {
+      $(img).attr('src', src);
+      $(img).on("load", function() {
+        img.removeAttribute('data-src');
+      });
+    }
+  }
+
+  function set_posts_visible(posts, visible) {
+    if (visible) {
+
+      // show bottom border by default
+      $(posts).removeClass('post-preview-last');
+
+      // apply limits if need be
+      var max_posts = 25;
+      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
+      if (apply_limits && posts.length > max_posts) {
+        posts = $(posts).slice(0, max_posts);
+      } else {
+        $('.posts-more a').addClass('hidden');
+      }
+
+      // apply last style
+      $(posts.slice(-1)[0]).addClass('post-preview-last');
+
+      $(posts).removeClass('hidden');
+      $(posts).find('img[data-src]').each(function(i, img) {
+        load_image(img);
+      });
+    } else {
+      $(posts).addClass('hidden');
+    }
+  }
+
+  function apply_hash_filter() {
+
+    // clear active state
+    $('.categories .active').removeClass('active');
+
+    // mark all posts invisible to start
+    set_posts_visible($('.posts-list').children('a'), false);
+
+    // if we have a hash filter
+    if (window.location.hash && window.location.hash.startsWith("#category:")) {
+
+      // mark posts that match the category visible
+      var page_category = window.location.hash.replace(/^#category:/, "");
+      page_category = decodeURIComponent(page_category)
+      var posts = $('.post-metadata').map(function(idx, script) {
+        var metadata = $.parseJSON($(script).html());
+        var post = null;
+        $.each(metadata.categories, function(idx, category) {
+          category = category.replace(/ /g,"_");
+          if ((page_category || '').toLowerCase() === "articles" || category === page_category) {
+            post = $(script).parent().get();
+            return false;
+          }
+        });
+        return post;
+      });
+      set_posts_visible(posts, true);
+
+      // mark the hash active
+      $('.categories li>a[href="' + decodeURIComponent(window.location.hash) + '"]').addClass('active');
+
+      // update the list_caption
+      var list_caption = $('.posts-list-caption');
+      var caption = (page_category || '').toLowerCase() === "articles"
+        ? list_caption.attr('data-caption')
+        : ('Category: ' + page_category.replace(/_/g," "));
+      list_caption.text(caption);
+
+    } else {
+
+      // no hash filter, make all posts visible (subject to max display)
+      set_posts_visible($('.posts-list').children(), true);
+
+      // reset list caption
+      var list_caption = $('.posts-list-caption');
+      list_caption.text(list_caption.attr('data-caption'));
+
+
+    }
+  }
+
+  // more articles
+  function apply_post_limits(apply) {
+    if (apply) {
+      $('.posts-container').addClass('posts-apply-limit');
+      $('.posts-more a').removeClass('hidden');
+    } else {
+      $('.posts-container').removeClass('posts-apply-limit');
+      $('.posts-more a').addClass('hidden');
+    }
+  }
+
+  // click handling for tags
+  $('.dt-tag').click(function(ev) {
+    window.location.hash = '#category:' + $(this).text().replace(/ /g, "_");
+    return false;
+  })
+
+  // hash filter handling
+  apply_hash_filter();
+  $(window).on('hashchange',function() {
+    apply_post_limits(true);
+    apply_hash_filter();
+  });
+
+  // more articles link
+  $('.posts-more a').click(function(e) {
+    e.preventDefault();
+    apply_post_limits(false);
+    apply_hash_filter();
+    return false;
+  });
+
+}
+
+</script>
+
+
 
 <div class="posts-container posts-apply-limit l-page">
 <div class="posts-list">
 <h1 class="posts-list-caption" data-caption="Activity Patterns">Activity Patterns</h1>
+<a href="posts/pecari/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">March 6, 2023</div>
+<div class="dt-authors">
+<div class="dt-author">Diego J. Lizcano</div>
+</div>
+</div>
+<div class="thumbnail">
+<img src="https://dlizcano.github.io/activity/fig/pecari.png"/>
+</div>
+<div class="description">
+<h2>Activity Pattern for pecari de collar</h2>
+<div class="dt-tags"></div>
+<p>Activity Pattern for _Pecari tajacu_</p>
+</div>
+</a>
+<a href="posts/cerrillo/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">March 6, 2023</div>
+<div class="dt-authors">
+<div class="dt-author">Diego J. Lizcano</div>
+</div>
+</div>
+<div class="thumbnail">
+<img src="https://dlizcano.github.io/activity/fig/pecari.png"/>
+</div>
+<div class="description">
+<h2>Activity Pattern for pecari de labio blanco</h2>
+<div class="dt-tags"></div>
+<p>Activity Pattern for _Tayassu pecari_</p>
+</div>
+</a>
+<a href="posts/tamandua/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">March 6, 2023</div>
+<div class="dt-authors">
+<div class="dt-author">Diego J. Lizcano</div>
+</div>
+</div>
+<div class="thumbnail">
+<img src="https://dlizcano.github.io/activity/fig/tamandua.png"/>
+</div>
+<div class="description">
+<h2>Activity Pattern for tamandua</h2>
+<div class="dt-tags"></div>
+<p>Activity Pattern for _Tamandua tetradactyla_</p>
+</div>
+</a>
 <a href="posts/americana/" class="post-preview">
 <script class="post-metadata" type="text/json">{"categories":[]}</script>
 <div class="metadata">
@@ -2269,6 +2320,125 @@ function init_posts_list() {
 <p>Activity Pattern for _Mazama americana_</p>
 </div>
 </a>
+<a href="posts/armadillo/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">March 5, 2023</div>
+<div class="dt-authors">
+<div class="dt-author">Diego J. Lizcano</div>
+</div>
+</div>
+<div class="thumbnail">
+<img src="https://dlizcano.github.io/activity/fig/armadillo.png"/>
+</div>
+<div class="description">
+<h2>Activity Pattern for armadillo</h2>
+<div class="dt-tags"></div>
+<p>Activity Pattern for _Dasypus novemcinctus_</p>
+</div>
+</a>
+<a href="posts/eira/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">March 5, 2023</div>
+<div class="dt-authors">
+<div class="dt-author">Diego J. Lizcano</div>
+</div>
+</div>
+<div class="thumbnail">
+<img data-src="https://dlizcano.github.io/activity/fig/eira.png"/>
+</div>
+<div class="description">
+<h2>Activity Pattern for tayra</h2>
+<div class="dt-tags"></div>
+<p>Activity Pattern for _Eira barbara_</p>
+</div>
+</a>
+<a href="posts/jaguar/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">March 5, 2023</div>
+<div class="dt-authors">
+<div class="dt-author">Diego J. Lizcano</div>
+</div>
+</div>
+<div class="thumbnail">
+<img data-src="https://dlizcano.github.io/activity/fig/jaguar.png"/>
+</div>
+<div class="description">
+<h2>Activity Pattern for jaguar</h2>
+<div class="dt-tags"></div>
+<p>Activity Pattern for _Panthera onca_</p>
+</div>
+</a>
+<a href="posts/nasua/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">March 5, 2023</div>
+<div class="dt-authors">
+<div class="dt-author">Diego J. Lizcano</div>
+</div>
+</div>
+<div class="thumbnail">
+<img data-src="https://dlizcano.github.io/activity/fig/nasua.png"/>
+</div>
+<div class="description">
+<h2>Activity Pattern for coati</h2>
+<div class="dt-tags"></div>
+<p>Activity Pattern for _Nasua nasua_</p>
+</div>
+</a>
+<a href="posts/neque/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">March 5, 2023</div>
+<div class="dt-authors">
+<div class="dt-author">Diego J. Lizcano</div>
+</div>
+</div>
+<div class="thumbnail">
+<img data-src="https://dlizcano.github.io/activity/fig/neque.png"/>
+</div>
+<div class="description">
+<h2>Activity Pattern for neque</h2>
+<div class="dt-tags"></div>
+<p>Activity Pattern for _Dasyprocta punctata_</p>
+</div>
+</a>
+<a href="posts/ocelot/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">March 5, 2023</div>
+<div class="dt-authors">
+<div class="dt-author">Diego J. Lizcano</div>
+</div>
+</div>
+<div class="thumbnail">
+<img data-src="https://dlizcano.github.io/activity/fig/ocelot.png"/>
+</div>
+<div class="description">
+<h2>Activity Pattern for ocelot</h2>
+<div class="dt-tags"></div>
+<p>Activity Pattern for _Leopardus pardalis_</p>
+</div>
+</a>
+<a href="posts/paca/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">March 5, 2023</div>
+<div class="dt-authors">
+<div class="dt-author">Diego J. Lizcano</div>
+</div>
+</div>
+<div class="thumbnail">
+<img data-src="https://dlizcano.github.io/activity/fig/paca.png"/>
+</div>
+<div class="description">
+<h2>Activity Pattern for guagua</h2>
+<div class="dt-tags"></div>
+<p>Activity Pattern for _Cuniculus paca_</p>
+</div>
+</a>
 <a href="posts/tapirus/" class="post-preview">
 <script class="post-metadata" type="text/json">{"categories":[]}</script>
 <div class="metadata">
@@ -2278,7 +2448,7 @@ function init_posts_list() {
 </div>
 </div>
 <div class="thumbnail">
-<img src="https://dlizcano.github.io/activity/fig/danta.png"/>
+<img data-src="https://dlizcano.github.io/activity/fig/danta.png"/>
 </div>
 <div class="description">
 <h2>Activity Pattern for danta</h2>
@@ -2295,7 +2465,7 @@ function init_posts_list() {
 </div>
 </div>
 <div class="thumbnail">
-<img src="https://dlizcano.github.io/activity/fig/yagouaroundi.png"/>
+<img data-src="https://dlizcano.github.io/activity/fig/yagouaroundi.png"/>
 </div>
 <div class="description">
 <h2>Activity Pattern for yaguarundí</h2>
@@ -2312,7 +2482,7 @@ function init_posts_list() {
 </div>
 </div>
 <div class="thumbnail">
-<img src="https://dlizcano.github.io/activity/fig/mono.png"/>
+<img data-src="https://dlizcano.github.io/activity/fig/mono.png"/>
 </div>
 <div class="description">
 <h2>Activity Pattern for squirrel monkey</h2>
@@ -2329,114 +2499,12 @@ function init_posts_list() {
 </div>
 </div>
 <div class="thumbnail">
-<img src="https://dlizcano.github.io/activity/fig/saguinus.jpg"/>
+<img data-src="https://dlizcano.github.io/activity/fig/saguinus.jpg"/>
 </div>
 <div class="description">
 <h2>Activity Pattern for pichico monkey</h2>
 <div class="dt-tags"></div>
 <p>Activity Pattern for _Saguinus fuscicollis_</p>
-</div>
-</a>
-<a href="posts/eira/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">March 1, 2023</div>
-<div class="dt-authors">
-<div class="dt-author">Diego J. Lizcano</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="https://dlizcano.github.io/activity/fig/eira.png"/>
-</div>
-<div class="description">
-<h2>Activity Pattern for tayra</h2>
-<div class="dt-tags"></div>
-<p>Activity Pattern for _Eira barbara_</p>
-</div>
-</a>
-<a href="posts/nasua/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">March 1, 2023</div>
-<div class="dt-authors">
-<div class="dt-author">Diego J. Lizcano</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="https://dlizcano.github.io/activity/fig/nasua.png"/>
-</div>
-<div class="description">
-<h2>Activity Pattern for coati</h2>
-<div class="dt-tags"></div>
-<p>Activity Pattern for _Nasua nasua_</p>
-</div>
-</a>
-<a href="posts/ocelot/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">March 1, 2023</div>
-<div class="dt-authors">
-<div class="dt-author">Diego J. Lizcano</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="https://dlizcano.github.io/activity/fig/ocelot.png"/>
-</div>
-<div class="description">
-<h2>Activity Pattern for ocelot</h2>
-<div class="dt-tags"></div>
-<p>Activity Pattern for _Leopardus pardalis_</p>
-</div>
-</a>
-<a href="posts/pecari/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">March 1, 2023</div>
-<div class="dt-authors">
-<div class="dt-author">Diego J. Lizcano</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="https://dlizcano.github.io/activity/fig/pecari.png"/>
-</div>
-<div class="description">
-<h2>Activity Pattern for pecari</h2>
-<div class="dt-tags"></div>
-<p>Activity Pattern for _Pecari tajacu_</p>
-</div>
-</a>
-<a href="posts/tamandua/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">March 1, 2023</div>
-<div class="dt-authors">
-<div class="dt-author">Diego J. Lizcano</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="https://dlizcano.github.io/activity/fig/tamandua.png"/>
-</div>
-<div class="description">
-<h2>Activity Pattern for tamandua</h2>
-<div class="dt-tags"></div>
-<p>Activity Pattern for _Tamandua tetradactyla_</p>
-</div>
-</a>
-<a href="posts/jaguar/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Nov. 11, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Diego J. Lizcano</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="https://dlizcano.github.io/activity/fig/jaguar.png"/>
-</div>
-<div class="description">
-<h2>Activity Pattern for jaguar</h2>
-<div class="dt-tags"></div>
-<p>Activity Pattern for _Panthera onca_</p>
 </div>
 </a>
 <a href="posts/puma/" class="post-preview">
@@ -2454,57 +2522,6 @@ function init_posts_list() {
 <h2>Activity Pattern for Puma</h2>
 <div class="dt-tags"></div>
 <p>Activity Pattern for _Puma concolor_</p>
-</div>
-</a>
-<a href="posts/armadillo/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Nov. 8, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Diego J. Lizcano</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="https://dlizcano.github.io/activity/fig/armadillo.png"/>
-</div>
-<div class="description">
-<h2>Activity Pattern for armadillo</h2>
-<div class="dt-tags"></div>
-<p>Activity Pattern for _Dasypus novemcinctus_</p>
-</div>
-</a>
-<a href="posts/neque/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Nov. 8, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Diego J. Lizcano</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="https://dlizcano.github.io/activity/fig/neque.png"/>
-</div>
-<div class="description">
-<h2>Activity Pattern for neque</h2>
-<div class="dt-tags"></div>
-<p>Activity Pattern for _Dasyprocta fuliginosa_</p>
-</div>
-</a>
-<a href="posts/paca/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Nov. 8, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Diego J. Lizcano</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="https://dlizcano.github.io/activity/fig/paca.png"/>
-</div>
-<div class="description">
-<h2>Activity Pattern for paca</h2>
-<div class="dt-tags"></div>
-<p>Activity Pattern for _Cuniculus paca_</p>
 </div>
 </a>
 <a href="posts/welcome/" class="post-preview">
@@ -2530,7 +2547,7 @@ reading what we have to say!</p>
 <a href="#">More articles &raquo;</a>
 </div>
 </div>
-<!--/radix_placeholder_article_listing-->
+<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
 <h1>Activity Patterns</h1>
@@ -2560,4 +2577,4 @@ reading what we have to say!</p>
 
 </body>
 
-</html>
+</h

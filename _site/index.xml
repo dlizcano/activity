@@ -7,7 +7,34 @@
     <description>Activity Patterns
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 05 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Activity Pattern for pecari de collar</title>
+      <dc:creator>Diego J. Lizcano</dc:creator>
+      <link>https://dlizcano.github.io/activity/posts/pecari</link>
+      <description>Activity Pattern for _Pecari tajacu_</description>
+      <guid>https://dlizcano.github.io/activity/posts/pecari</guid>
+      <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://dlizcano.github.io/activity/fig/pecari.png" medium="image" type="image/png"/>
+    </item>
+    <item>
+      <title>Activity Pattern for pecari de labio blanco</title>
+      <dc:creator>Diego J. Lizcano</dc:creator>
+      <link>https://dlizcano.github.io/activity/posts/cerrillo</link>
+      <description>Activity Pattern for _Tayassu pecari_</description>
+      <guid>https://dlizcano.github.io/activity/posts/cerrillo</guid>
+      <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://dlizcano.github.io/activity/fig/pecari.png" medium="image" type="image/png"/>
+    </item>
+    <item>
+      <title>Activity Pattern for tamandua</title>
+      <dc:creator>Diego J. Lizcano</dc:creator>
+      <link>https://dlizcano.github.io/activity/posts/tamandua</link>
+      <description>Activity Pattern for _Tamandua tetradactyla_</description>
+      <guid>https://dlizcano.github.io/activity/posts/tamandua</guid>
+      <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://dlizcano.github.io/activity/fig/tamandua.png" medium="image" type="image/png"/>
+    </item>
     <item>
       <title>Activity Pattern for venado rojo</title>
       <dc:creator>Diego J. Lizcano</dc:creator>
@@ -16,24 +43,6 @@
       <guid>https://dlizcano.github.io/activity/posts/americana</guid>
       <pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
       <media:content url="https://dlizcano.github.io/activity/fig/americana.png" medium="image" type="image/png"/>
-    </item>
-    <item>
-      <title>Activity Pattern for danta</title>
-      <dc:creator>Diego J. Lizcano</dc:creator>
-      <link>https://dlizcano.github.io/activity/posts/tapirus</link>
-      <description>Activity Pattern for _Tapirus terrestris_</description>
-      <guid>https://dlizcano.github.io/activity/posts/tapirus</guid>
-      <pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
-      <media:content url="https://dlizcano.github.io/activity/fig/danta.png" medium="image" type="image/png"/>
-    </item>
-    <item>
-      <title>Activity Pattern for yaguarundí</title>
-      <dc:creator>Diego J. Lizcano</dc:creator>
-      <link>https://dlizcano.github.io/activity/posts/yaguarundi</link>
-      <description>Activity Pattern for _Herpailurus yagouaroundi_</description>
-      <guid>https://dlizcano.github.io/activity/posts/yaguarundi</guid>
-      <pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
-      <media:content url="https://dlizcano.github.io/activity/fig/yagouaroundi.png" medium="image" type="image/png"/>
     </item>
     <item>
       <title>Activity Pattern for armadillo</title>
@@ -99,6 +108,24 @@
       <media:content url="https://dlizcano.github.io/activity/fig/paca.png" medium="image" type="image/png"/>
     </item>
     <item>
+      <title>Activity Pattern for danta</title>
+      <dc:creator>Diego J. Lizcano</dc:creator>
+      <link>https://dlizcano.github.io/activity/posts/tapirus</link>
+      <description>Activity Pattern for _Tapirus terrestris_</description>
+      <guid>https://dlizcano.github.io/activity/posts/tapirus</guid>
+      <pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://dlizcano.github.io/activity/fig/danta.png" medium="image" type="image/png"/>
+    </item>
+    <item>
+      <title>Activity Pattern for yaguarundí</title>
+      <dc:creator>Diego J. Lizcano</dc:creator>
+      <link>https://dlizcano.github.io/activity/posts/yaguarundi</link>
+      <description>Activity Pattern for _Herpailurus yagouaroundi_</description>
+      <guid>https://dlizcano.github.io/activity/posts/yaguarundi</guid>
+      <pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://dlizcano.github.io/activity/fig/yagouaroundi.png" medium="image" type="image/png"/>
+    </item>
+    <item>
       <title>Activity Pattern for squirrel monkey</title>
       <dc:creator>Diego J. Lizcano</dc:creator>
       <link>https://dlizcano.github.io/activity/posts/mono</link>
@@ -115,24 +142,6 @@
       <guid>https://dlizcano.github.io/activity/posts/titi</guid>
       <pubDate>Thu, 02 Mar 2023 00:00:00 +0000</pubDate>
       <media:content url="https://dlizcano.github.io/activity/fig/saguinus.jpg" medium="image" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Activity Pattern for pecari</title>
-      <dc:creator>Diego J. Lizcano</dc:creator>
-      <link>https://dlizcano.github.io/activity/posts/pecari</link>
-      <description>Activity Pattern for _Pecari tajacu_</description>
-      <guid>https://dlizcano.github.io/activity/posts/pecari</guid>
-      <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
-      <media:content url="https://dlizcano.github.io/activity/fig/pecari.png" medium="image" type="image/png"/>
-    </item>
-    <item>
-      <title>Activity Pattern for tamandua</title>
-      <dc:creator>Diego J. Lizcano</dc:creator>
-      <link>https://dlizcano.github.io/activity/posts/tamandua</link>
-      <description>Activity Pattern for _Tamandua tetradactyla_</description>
-      <guid>https://dlizcano.github.io/activity/posts/tamandua</guid>
-      <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
-      <media:content url="https://dlizcano.github.io/activity/fig/tamandua.png" medium="image" type="image/png"/>
     </item>
     <item>
       <title>Activity Pattern for Puma</title>

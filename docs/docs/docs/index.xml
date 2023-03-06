@@ -9,15 +9,6 @@
     <generator>Distill</generator>
     <lastBuildDate>Mon, 06 Mar 2023 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>Activity Pattern for pecari de collar</title>
-      <dc:creator>Diego J. Lizcano</dc:creator>
-      <link>https://dlizcano.github.io/activity/posts/pecari</link>
-      <description>Activity Pattern for _Pecari tajacu_</description>
-      <guid>https://dlizcano.github.io/activity/posts/pecari</guid>
-      <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
-      <media:content url="https://dlizcano.github.io/activity/fig/pecari.png" medium="image" type="image/png"/>
-    </item>
-    <item>
       <title>Activity Pattern for pecari de labio blanco</title>
       <dc:creator>Diego J. Lizcano</dc:creator>
       <link>https://dlizcano.github.io/activity/posts/cerrillo</link>
@@ -25,6 +16,15 @@
       <guid>https://dlizcano.github.io/activity/posts/cerrillo</guid>
       <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
       <media:content url="https://dlizcano.github.io/activity/fig/cerrillo.png" medium="image" type="image/png"/>
+    </item>
+    <item>
+      <title>Activity Pattern for pecari de collar</title>
+      <dc:creator>Diego J. Lizcano</dc:creator>
+      <link>https://dlizcano.github.io/activity/posts/pecari</link>
+      <description>Activity Pattern for _Pecari tajacu_</description>
+      <guid>https://dlizcano.github.io/activity/posts/pecari</guid>
+      <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://dlizcano.github.io/activity/fig/pecari.png" medium="image" type="image/png"/>
     </item>
     <item>
       <title>Activity Pattern for tamandua</title>
@@ -115,15 +115,6 @@
       <guid>https://dlizcano.github.io/activity/posts/tapirus</guid>
       <pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
       <media:content url="https://dlizcano.github.io/activity/fig/danta.png" medium="image" type="image/png"/>
-    </item>
-    <item>
-      <title>Activity Pattern for yaguarundí</title>
-      <dc:creator>Diego J. Lizcano</dc:creator>
-      <link>https://dlizcano.github.io/activity/posts/yaguarundi</link>
-      <description>Activity Pattern for _Herpailurus yagouaroundi_</description>
-      <guid>https://dlizcano.github.io/activity/posts/yaguarundi</guid>
-      <pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
-      <media:content url="https://dlizcano.github.io/activity/fig/yagouaroundi.png" medium="image" type="image/png"/>
     </item>
     <item>
       <title>Activity Pattern for squirrel monkey</title>

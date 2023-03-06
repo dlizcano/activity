@@ -18,6 +18,15 @@
       <media:content url="https://dlizcano.github.io/activity/fig/cerrillo.png" medium="image" type="image/png"/>
     </item>
     <item>
+      <title>Activity Pattern for zariguella</title>
+      <dc:creator>Diego J. Lizcano</dc:creator>
+      <link>https://dlizcano.github.io/activity/posts/chucha</link>
+      <description>Activity Pattern for _Didelphis marsupialis_</description>
+      <guid>https://dlizcano.github.io/activity/posts/chucha</guid>
+      <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://dlizcano.github.io/activity/fig/zariguella.png" medium="image" type="image/png"/>
+    </item>
+    <item>
       <title>Activity Pattern for pecari de collar</title>
       <dc:creator>Diego J. Lizcano</dc:creator>
       <link>https://dlizcano.github.io/activity/posts/pecari</link>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Activity Patterns</title>
+    <link>https://dlizcano.github.io/activity</link>
+    <atom:link href="https://dlizcano.github.io/activity/index.xml" rel="self" type="application/rss+xml"/>
+    <description>Activity Patterns
+</description>
+    <generator>Distill</generator>
+    <lastBuildDate>Mon, 06 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Activity Pattern for pecari de collar</title>
+      <dc:creator>Diego J. Lizcano</dc:creator>
+      <link>https://dlizcano.github.io/activity/posts/pecari</link>
+      <description>Activity Pattern for _Pecari tajacu_</description>
+      <guid>https://dlizcano.github.io/activity/posts/pecari</guid>
+      <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://dlizcano.github.io/activity/fig/pecari.png" medium="image" type="image/png"/>
+    </item>
+    <item>
+      <title>Activity Pattern for pecari de labio blanco</title>
+      <dc:creator>Diego J. Lizcano</dc:creator>
+      <link>https://dlizcano.github.io/activity/posts/cerrillo</link>
+      <description>Activity Pattern for _Tayassu pecari_</description>
+      <guid>https://dlizcano.github.io/activity/posts/cerrillo</guid>
+      <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://dlizcano.github.io/activity/fig/cerrillo.png" medium="image" type="image/png"/>
+    </item>
+    <item>
+      <title>Activity Pattern for tamandua</title>
+      <dc:creator>Diego J. Lizcano</dc:creator>
+      <link>https://dlizcano.github.io/activity/posts/tamandua</link>
+      <description>Activity Pattern for _Tamandua tetradactyla_</description>
+      <guid>https://dlizcano.github.io/activity/posts/tamandua</guid>
+      <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://dlizcano.github.io/activity/fig/tamandua.png" medium="image" type="image/png"/>
+    </item>
+    <item>
+      <title>Activity Pattern for venado rojo</title>
+      <dc:creator>Diego J. Lizcano</dc:creator>
+      <link>https://dlizcano.github.io/activity/posts/americana</link>
+      <description>Activity Pattern for _Mazama americana_</description>
+      <guid>https://dlizcano.github.io/activity/posts/americana</guid>
+      <pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://dlizcano.github.io/activity/fig/americana.png" medium="image" type="image/png"/>
+    </item>
+    <item>
+      <title>Activity Pattern for armadillo</title>
+      <dc:creator>Diego J. Lizcano</dc:creator>
+      <link>https://dlizcano.github.io/activity/posts/armadillo</link>
+      <description>Activity Pattern for _Dasypus novemcinctus_</description>
+      <guid>https://dlizcano.github.io/activity/posts/armadillo</guid>
+      <pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://dlizcano.github.io/activity/fig/armadillo.png" medium="image" type="image/png"/>
+    </item>
+    <item>
+      <title>Activity Pattern for tayra</title>
+      <dc:creator>Diego J. Lizcano</dc:creator>
+      <link>https://dlizcano.github.io/activity/posts/eira</link>
+      <description>Activity Pattern for _Eira barbara_</description>
+      <guid>https://dlizcano.github.io/activity/posts/eira</guid>
+      <pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://dlizcano.github.io/activity/fig/eira.png" medium="image" type="image/png"/>
+    </item>
+    <item>
+      <title>Activity Pattern for jaguar</title>
+      <dc:creator>Diego J. Lizcano</dc:creator>
+      <link>https://dlizcano.github.io/activity/posts/jaguar</link>
+      <description>Activity Pattern for _Panthera onca_</description>
+      <guid>https://dlizcano.github.io/activity/posts/jaguar</guid>
+      <pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://dlizcano.github.io/activity/fig/jaguar.png" medium="image" type="image/png"/>
+    </item>
+    <item>
+      <title>Activity Pattern for coati</title>
+      <dc:creator>Diego J. Lizcano</dc:creator>
+      <link>https://dlizcano.github.io/activity/posts/nasua</link>
+      <description>Activity Pattern for _Nasua nasua_</description>
+      <guid>https://dlizcano.github.io/activity/posts/nasua</guid>
+      <pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://dlizcano.github.io/activity/fig/nasua.png" medium="image" type="image/png"/>
+    </item>
+    <item>
+      <title>Activity Pattern for neque</title>
+      <dc:creator>Diego J. Lizcano</dc:creator>
+      <link>https://dlizcano.github.io/activity/posts/neque</link>
+      <description>Activity Pattern for _Dasyprocta punctata_</description>
+      <guid>https://dlizcano.github.io/activity/posts/neque</guid>
+      <pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://dlizcano.github.io/activity/fig/neque.png" medium="image" type="image/png"/>
+    </item>
+    <item>
+      <title>Activity Pattern for ocelot</title>
+      <dc:creator>Diego J. Lizcano</dc:creator>
+      <link>https://dlizcano.github.io/activity/posts/ocelot</link>
+      <description>Activity Pattern for _Leopardus pardalis_</description>
+      <guid>https://dlizcano.github.io/activity/posts/ocelot</guid>
+      <pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://dlizcano.github.io/activity/fig/ocelot.png" medium="image" type="image/png"/>
+    </item>
+    <item>
+      <title>Activity Pattern for guagua</title>
+      <dc:creator>Diego J. Lizcano</dc:creator>
+      <link>https://dlizcano.github.io/activity/posts/paca</link>
+      <description>Activity Pattern for _Cuniculus paca_</description>
+      <guid>https://dlizcano.github.io/activity/posts/paca</guid>
+      <pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://dlizcano.github.io/activity/fig/paca.png" medium="image" type="image/png"/>
+    </item>
+    <item>
+      <title>Activity Pattern for danta</title>
+      <dc:creator>Diego J. Lizcano</dc:creator>
+      <link>https://dlizcano.github.io/activity/posts/tapirus</link>
+      <description>Activity Pattern for _Tapirus terrestris_</description>
+      <guid>https://dlizcano.github.io/activity/posts/tapirus</guid>
+      <pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://dlizcano.github.io/activity/fig/danta.png" medium="image" type="image/png"/>
+    </item>
+    <item>
+      <title>Activity Pattern for yaguarundí</title>
+      <dc:creator>Diego J. Lizcano</dc:creator>
+      <link>https://dlizcano.github.io/activity/posts/yaguarundi</link>
+      <description>Activity Pattern for _Herpailurus yagouaroundi_</description>
+      <guid>https://dlizcano.github.io/activity/posts/yaguarundi</guid>
+      <pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://dlizcano.github.io/activity/fig/yagouaroundi.png" medium="image" type="image/png"/>
+    </item>
+    <item>
+      <title>Activity Pattern for squirrel monkey</title>
+      <dc:creator>Diego J. Lizcano</dc:creator>
+      <link>https://dlizcano.github.io/activity/posts/mono</link>
+      <description>Activity Pattern for _Saimiri sciureus_</description>
+      <guid>https://dlizcano.github.io/activity/posts/mono</guid>
+      <pubDate>Thu, 02 Mar 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://dlizcano.github.io/activity/fig/mono.png" medium="image" type="image/png"/>
+    </item>
+    <item>
+      <title>Activity Pattern for pichico monkey</title>
+      <dc:creator>Diego J. Lizcano</dc:creator>
+      <link>https://dlizcano.github.io/activity/posts/titi</link>
+      <description>Activity Pattern for _Saguinus fuscicollis_</description>
+      <guid>https://dlizcano.github.io/activity/posts/titi</guid>
+      <pubDate>Thu, 02 Mar 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://dlizcano.github.io/activity/fig/saguinus.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Activity Pattern for Puma</title>
+      <dc:creator>Diego J. Lizcano</dc:creator>
+      <link>https://dlizcano.github.io/activity/posts/puma</link>
+      <description>Activity Pattern for _Puma concolor_</description>
+      <guid>https://dlizcano.github.io/activity/posts/puma</guid>
+      <pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://dlizcano.github.io/activity/fig/puma.png" medium="image" type="image/png"/>
+    </item>
+    <item>
+      <title>Welcome to Activity Patterns</title>
+      <dc:creator>Nora Jones</dc:creator>
+      <link>https://dlizcano.github.io/activity/posts/welcome</link>
+      <description>Welcome to our new blog, Activity Patterns. We hope you enjoy 
+reading what we have to say!</description>
+      <guid>https://dlizcano.github.io/activity/posts/welcome</guid>
+      <pubDate>Fri, 04 Nov 2022 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,7 @@
+project_id,deployment_id,placename,longitude,latitude,start_date,end_date,bait_type,bait_description,feature_type,feature_type_methodology,camera_id,camera_name,quiet_period,camera_functioning,sensor_height,height_other,sensor_orientation,orientation_other,plot_treatment,plot_treatment_description,detection_distance,subproject_name,subproject_design,event_name,event_description,event_type,recorded_by
+2004751,AWE.AMARGAL-CAM20,Cam20_Amargal,-77.4957,5.57128,2022-12-08 00:00:00,2023-01-13 00:00:00,None,,Carcass,,2051549,20,0,Camera Functioning,Knee height,,Parallel,,,,,,,,,,
+2004751,AWE-AMARGAL-CAM17,Cam17_Amargal,-77.50163,5.57198,2022-12-08 00:00:00,2023-01-13 00:00:00,None,,Carcass,,2051552,17,0,Camera Functioning,Knee height,,Parallel,,,,,,,,,,
+2004751,AWE-AMARGAL-CAM23,Cam23_Amargal,-77.50279,5.57004,2022-12-08 00:00:00,2023-01-13 00:00:00,None,,Carcass,,2051538,23,0,Camera Functioning,Knee height,,Parallel,,,,,,,,,,
+2004751,AWE.AMARGAL.CAM13,Cam13_Amargal,-77.49871,5.57225,2022-12-08 00:00:00,2023-01-13 00:00:00,None,,Carcass,,2051541,13,0,Camera Functioning,Knee height,,Parallel,,,,,,,,,,
+2004751,AWE.AMARGAL.CAM8,Cam08_Amargal,-77.5002,5.57488,2022-12-08 00:00:00,2023-01-13 00:00:00,None,,Carcass,,2051546,08,0,Camera Functioning,Knee height,,Parallel,,,,,,,,,,
+2004751,AWE.AMARGAL.CAM7,Cam07_Amargal,-77.50252,5.56821,2022-12-08 00:00:00,2023-01-13 00:00:00,None,,Carcass,,2051548,07,0,Camera Functioning,Knee height,,Parallel,,,,,,,,,,

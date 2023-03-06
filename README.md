@@ -1,5 +1,6 @@
 # activity
 
-copy D:\BoxFiles\Box Sync\CodigoR\patrones_actividad\ _site
+## Notes for Diego
+copy D:\BoxFiles\Box Sync\github\activity\ _site
 to
 D:\BoxFiles\Box Sync\github\activity\docs

@@ -1,0 +1,170 @@
+---
+title: "Activity Pattern for tamandua"
+description: |
+  Activity Pattern for _Tamandua mexicana_
+author:
+  - name: Diego J. Lizcano  
+    url: http://dlizcano.github.io/
+    affiliation: Awake Travel
+    affiliation_url: https://monitoreo-acustico.netlify.app/
+    orcid_id: 0000-0002-9648-0576
+date: "`r Sys.Date()`"
+output:
+  distill::distill_article:
+    self_contained: false
+code_folding: true
+highlight: pygments
+creative_commons: CC BY-SA
+citation_url: https://dlizcano.github.io/activity
+base_url: https://dlizcano.github.io/activity
+preview: https://dlizcano.github.io/activity/fig/tamandua.png
+twitter:
+  site: "@rstudio"
+  creator: "@dlizcano"
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+# Learn more about creating blogs with Distill at:
+# https://rstudio.github.io/distill/blog.html
+
+```
+
+
+# Descripción
+
+Es un oso hormiguero de tamaño mediano con una cola prensil, pequeños ojos y orejas y un hocico largo. Su cuerpo (con la cabeza) mide entre 50 y 80 cm de longitud, y su cola prensil entre 40 y 65 cm. Pesa entre 3,5 y 8,5 kg. El pelaje es de color amarillo pálido en la mayor parte del cuerpo, con un parche distintivo de pelaje negruzco en los costados, la espalda y los hombros, cuya forma se parece bastante a un chaleco.
+
+### Detalles de Wikipedia
+
+https://es.wikipedia.org/wiki/Tamandua_mexicana
+
+# Mapa de distribución
+
+```{r}
+
+
+################
+library(readr)
+library(tidyverse)
+library(sf)
+library(camtrapR)
+library(raster)
+library(tmap)
+library(tmaptools)
+library(mapview)
+
+# source("D:/BoxFiles/Box Sync/CodigoR/patrones_actividad/R/TEAM.R")
+
+source("D:/BoxFiles/Box Sync/github/activity/R/TEAM.R")
+
+##### Read datos.raw
+##### Read datos.raw
+# deployment <- read_csv("D:/BoxFiles/Box Sync/CodigoR/patrones_actividad/data/deployments.csv")
+
+deployment <- read_csv("C:/CodigoR/Awake_datos/data/Awake_full/deployments.csv")
+
+# images <- read_csv("D:/BoxFiles/Box Sync/CodigoR/patrones_actividad/data/images.csv")
+# full.data <- left_join(images, deployment)
+
+images <- read_csv("C:/CodigoR/Awake_datos/data/Awake_full/images.csv")
+sequences <- read_csv("C:/CodigoR/Awake_datos/data/Awake_full/sequences.csv")
+full.data.1 <- left_join(images, sequences)
+full.data <- left_join(full.data.1, deployment)
+
+#### elimina dos camaras sin coordenadas
+#ind <- which(is.na(datos.raw1$Lat))
+#datos.raw <- datos.raw1[-ind,]
+
+#### make sf object
+datos.raw_sf <- st_as_sf(full.data, coords = c("longitude", "latitude"), 
+                        crs = "+proj=longlat +ellps=GRS80 +no_defs")
+# make sf
+camaras <-  st_transform (datos.raw_sf, "+proj=longlat +ellps=GRS80 +no_defs") 
+
+# make species mat
+mat.per.sp<-f.matrix.creator2(data = full.data, year = 2022)
+# mat.per.sp <- mat.per.sp[-1] # elimina NA 
+sp.names<-names(mat.per.sp) # species names
+
+# fix species for camtrapR
+camaras$species_epitet <- camaras$species
+camaras$Species <- str_c(camaras$genus, camaras$species, sep = " ", collapse = NULL)
+camaras$DateTimeOriginal <- as.character(strptime (camaras$timestamp, "%Y-%m-%d %H:%M:%S"))#sub(" UTC", "", camaras$timestamp) # remove the UTC
+
+camaras$Date <- as.character(strptime (camaras$timestamp, "%Y-%m-%d"))
+camaras$Time <- format(as.POSIXct(camaras$timestamp), format = "%H:%M:%S")
+
+#camaras
+camaras_unique <- deployment %>%
+      dplyr::select(anfitrion, camera_name, latitude, longitude) %>%  
+      st_as_sf( coords = c("longitude", "latitude"), 
+                        crs = "+proj=longlat +ellps=GRS80 +no_defs")
+
+###################
+
+
+```
+
+
+### _Tamandua mexicana_
+
+Zoom a la region de interes
+
+```{r eval=TRUE, layout="l-screen-inset shaded"}
+
+tamandua <- filter(camaras, Species=="Tamandua mexicana")# & subproject_name=="El Escondite")
+by_sp <- camaras %>%  group_by(Species) %>% tally()
+fotografias <- tamandua %>%  group_by(deployment_id) %>% tally()
+names(fotografias) <-  c("Camara", "Fotos tamandua", "geometry")
+
+
+mapview(camaras_unique, cex=1, col.regions = "black") + 
+  mapview(fotografias,  cex = "Fotos tamandua",
+                col.regions = "red", alpha = 0, map.types=c("Esri.WorldImagery", "OpenTopoMap"))
+
+```
+
+
+# Grafica actividad
+
+```{r eval=TRUE, results='asis'}
+
+
+# make shorter table
+Tamandua <- camaras %>% 
+  dplyr::select(Species, DateTimeOriginal, Date, Time, anfitrion) %>% 
+  dplyr::filter (Species =="Tamandua mexicana" )  %>%  
+  as.data.frame() %>% 
+  dlply(.(anfitrion)) # return list by anfitrion
+
+
+ for (i in 1:length(Tamandua)){
+  if(dim(Tamandua[[i]])[1] <= 10) # skip if menos 10 records
+    next
+  cat("###", names(Tamandua)[i])
+  #plot.new( )
+  #plot.window( xlim=c(-1,25), ylim=c(0,1))
+  # par(mar = c(5, 4, 3, 3) + 0.1)
+  activityDensity (recordTable = Tamandua[[i]],
+                   species     = "Tamandua mexicana",
+                   recordDateTimeCol="DateTimeOriginal") 
+  rect(0, 0, 6, 2.2, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transparent")
+  rect(18, 0, 24, 2.2, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transparent")
+ }
+
+
+```
+
+# Foto
+
+ [![tamandua](https://dlizcano.github.io/activity/fig/tamandua_mexicana_small.jpg)]( https://dlizcano.github.io/activity/fig/tamandua_mexicana_large.jpg)
+
+# Información de la sesión en R.
+
+```{r sesion, results='markup'}
+print(sessionInfo(), locale = FALSE)
+```
+

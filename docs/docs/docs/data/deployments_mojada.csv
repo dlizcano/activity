@@ -1,0 +1,9 @@
+project_id,deployment_id,placename,longitude,latitude,start_date,end_date,bait_type,bait_description,feature_type,feature_type_methodology,camera_id,camera_name,quiet_period,camera_functioning,sensor_height,height_other,sensor_orientation,orientation_other,plot_treatment,plot_treatment_description,detection_distance,subproject_name,subproject_design,event_name,event_description,event_type,recorded_by
+2004797,AWE-SELVAMOJADA-CAM1,Cam01_Selva_Mojada,-77.50472,5.55879,2022-12-09 00:00:00,2023-01-14 00:00:00,None,,Carcass,,2050554,01,0,Camera Functioning,Knee height,,Parallel,,,,,,,,,,
+2004797,AWE-SELVAMOJADA-CAM24,Cam24_Selva_Mojada,-77.49786,5.55508,2022-12-09 00:00:00,2023-01-14 00:00:00,None,,Carcass,,2051537,24,0,Camera Functioning,Knee height,,Parallel,,,,,,,,,,
+2004797,AWE-SELVAMOJADA-CAM10,Cam10_Selva_Mojada,-77.49884,5.55928,2022-12-09 00:00:00,2023-01-14 00:00:00,None,,Carcass,,2051545,10,0,Camera Functioning,Knee height,,Parallel,,,,,,,,,,
+2004797,AWE-SELVAMOJADA-CAM16,Cam16_Selva_Mojada,-77.50224,5.55999,2022-12-09 00:00:00,2023-01-14 00:00:00,None,,Carcass,,2051553,16,0,Camera Functioning,Knee height,,Parallel,,,,,,,,,,
+2004797,AWE-SELVAMOJADA-CAM22,Cam22_Selva_Mojada,-77.49741,5.56087,2022-12-09 00:00:00,2023-01-14 00:00:00,None,,Carcass,,2052671,22,0,Camera Functioning,Knee height,,Parallel,,,,,,,,,,
+2004797,AWE-SELVAMOJADA-CAM19,Cam19_Selva_Mojada,-77.49541,5.54162,2022-12-09 00:00:00,2023-01-14 00:00:00,None,,Carcass,,2051550,19,0,Camera Functioning,Knee height,,Parallel,,,,,,,,,,
+2004797,AWE-SELVAMOJADA-CAM9,Cam19_Selva_Mojada,-77.49541,5.54162,2022-12-09 00:00:00,2023-01-14 00:00:00,None,,Carcass,,2051547,09,0,Camera Functioning,Knee height,,Parallel,,,,,,,,,,
+2004797,AWE-SELVAMOJADA-CAM21,Cam21_Selva_Mojada,-77.49678,5.54588,2022-12-09 00:00:00,2023-01-14 00:00:00,None,,Carcass,,2051539,21,0,Camera Functioning,Knee height,,Parallel,,,,,,,,,,

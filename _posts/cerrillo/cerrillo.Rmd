@@ -17,7 +17,7 @@ highlight: pygments
 creative_commons: CC BY-SA
 citation_url: https://dlizcano.github.io/activity
 base_url: https://dlizcano.github.io/activity
-preview: https://dlizcano.github.io/activity/fig/pecari.png
+preview: https://dlizcano.github.io/activity/fig/cerrillo.png
 twitter:
   site: "@rstudio"
   creator: "@dlizcano"

@@ -17,7 +17,7 @@ highlight: pygments
 creative_commons: CC BY-SA
 citation_url: https://dlizcano.github.io/activity
 base_url: https://dlizcano.github.io/activity
-preview: https://dlizcano.github.io/activity/fig/yagouaroundi.png
+preview: https://dlizcano.github.io/activity/fig/danta.png
 twitter:
   site: "@rstudio"
   creator: "@dlizcano"
@@ -43,6 +43,8 @@ https://es.wikipedia.org/wiki/Tapirus_terrestris
 
 
 # Mapa de distribución
+
+zoom al area de interes
 
 ```{r}
 
@@ -108,7 +110,9 @@ camaras_unique <- deployment %>%
 
 ### _Tapirus terrestris_
 
-```{r eval=TRUE}
+Zoom a la region de interes
+
+```{r eval=TRUE, layout="l-screen-inset shaded"}
 
 
 yagouaroundi_selva <- filter(camaras, Species=="Tapirus terrestris")#  & subproject_name=="El Escondite")
@@ -183,9 +187,11 @@ tapir <- camaras %>%
 
 
  for (i in 1:length(tapir)){
+  if(dim(tapir[[i]])[1] <= 10) # skip if menos 10 records
+    next
  cat("###", names(tapir)[i])
   # plot.new( )
-  plot.window( xlim=c(-1,25), ylim=c(0,1))
+  # plot.window( xlim=c(-1,25), ylim=c(0,1))
   # par(mar = c(5, 4, 3, 3) + 0.1)
   activityDensity (recordTable = tapir[[i]],
                    species     = "Tapirus terrestris",
@@ -208,7 +214,7 @@ tapir <- camaras %>%
 
 # Foto
 
- [![tapir](https://dlizcano.github.io/activity/fig/yagouaroundi_small.jpg)]( https://dlizcano.github.io/activity/fig/yagouaroundi_large.jpg)
+ [![tapir](https://dlizcano.github.io/activity/fig/danta_small.jpg)]( https://dlizcano.github.io/activity/fig/danta_large.jpg)
 
 # Información de la sesión en R.
 

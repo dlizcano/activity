@@ -108,7 +108,9 @@ camaras_unique <- deployment %>%
 
 ### _Herpailurus yagouaroundi_
 
-```{r eval=TRUE}
+Zoom a la region de interes
+
+```{r eval=TRUE, layout="l-screen-inset shaded"}
 
 
 yagouaroundi_selva <- filter(camaras, Species=="Herpailurus yagouaroundi")# & subproject_name=="El Escondite")
@@ -166,7 +168,9 @@ bb3 <- c(-76.59668,  0.7690189, -76.57471, 0.7909837)
 # tmap_save(tinamu_window, "fig/Vichada/tinamu_map.png", width=1500, height=1000, dpi = 150)
 
 
-mapview(camaras_unique, cex=1, col.regions = "black") + mapview(fotografias,  cex = "Fotos yaguarundi", alpha = 0, map.types=c("Esri.WorldImagery", "OpenTopoMap"))
+mapview(camaras_unique, cex=1, col.regions = "black") + 
+  mapview(fotografias,  cex = "Fotos yaguarundi",
+                col.regions = "red", alpha = 0, map.types=c("Esri.WorldImagery", "OpenTopoMap"))
 
 ```
 
@@ -179,13 +183,15 @@ mapview(camaras_unique, cex=1, col.regions = "black") + mapview(fotografias,  ce
 # make shorter table
 Mazama <- camaras %>% 
   dplyr::select(Species, DateTimeOriginal, Date, Time, anfitrion) %>% 
-  dplyr::filter (Species =="Herpailurus yagouaroundi" )  %>%  as.data.frame() %>% dlply(.(anfitrion)) # return list by anfitrion
+  dplyr::filter (Species =="Herpailurus yagouaroundi" )  %>%  
+  as.data.frame() %>% 
+  dlply(.(anfitrion)) # return list by anfitrion
 
 
-# for (i in 1:length(Mazama)){
+# for (i in 1:2){ #length(Mazama)){
+  # if(dim(Mazama[[i]])[1] <= 10) # skip if menos 10 records
+   # next
  cat("###", names(Mazama)[2])
-  plot.new( )
-  plot.window( xlim=c(-1,25), ylim=c(0,1))
   # par(mar = c(5, 4, 3, 3) + 0.1)
   activityDensity (recordTable = Mazama[[2]],
                    species     = "Herpailurus yagouaroundi",

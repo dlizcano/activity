@@ -2,27 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>https://dlizcano.github.io/activity/about.html</loc>
-    <lastmod>2023-03-01T15:34:57-05:00</lastmod>
+    <lastmod>2023-03-01T23:36:41-05:00</lastmod>
   </url>
   <url>
     <loc>https://dlizcano.github.io/activity/</loc>
     <lastmod>2022-11-04T12:58:30-05:00</lastmod>
   </url>
   <url>
+    <loc>https://dlizcano.github.io/activity/posts/mono/</loc>
+    <lastmod>2023-03-02T00:10:11-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://dlizcano.github.io/activity/posts/titi/</loc>
+    <lastmod>2023-03-02T00:25:01-05:00</lastmod>
+  </url>
+  <url>
     <loc>https://dlizcano.github.io/activity/posts/eira/</loc>
-    <lastmod>2023-03-01T20:19:21-05:00</lastmod>
+    <lastmod>2023-03-01T21:37:22-05:00</lastmod>
   </url>
   <url>
     <loc>https://dlizcano.github.io/activity/posts/nasua/</loc>
-    <lastmod>2023-03-01T20:36:09-05:00</lastmod>
+    <lastmod>2023-03-01T21:39:37-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://dlizcano.github.io/activity/posts/ocelot/</loc>
+    <lastmod>2023-03-01T23:17:52-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://dlizcano.github.io/activity/posts/pecari/</loc>
+    <lastmod>2023-03-01T23:57:43-05:00</lastmod>
   </url>
   <url>
     <loc>https://dlizcano.github.io/activity/posts/tamandua/</loc>
     <lastmod>2023-03-01T18:14:26-05:00</lastmod>
-  </url>
-  <url>
-    <loc>https://dlizcano.github.io/activity/posts/yaguarundi/</loc>
-    <lastmod>2023-03-01T19:56:55-05:00</lastmod>
   </url>
   <url>
     <loc>https://dlizcano.github.io/activity/posts/americana/</loc>
@@ -30,10 +42,6 @@
   </url>
   <url>
     <loc>https://dlizcano.github.io/activity/posts/jaguar/</loc>
-    <lastmod>2023-03-01T15:34:56-05:00</lastmod>
-  </url>
-  <url>
-    <loc>https://dlizcano.github.io/activity/posts/pecari/</loc>
     <lastmod>2023-03-01T15:34:56-05:00</lastmod>
   </url>
   <url>

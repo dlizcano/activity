@@ -110,7 +110,7 @@ camaras_unique <- deployment %>%
 
 Zoom a la region de interes
 
-```{r eval=TRUE}
+```{r eval=TRUE, layout="l-screen-inset shaded"}
 
 
 mazama <- filter(camaras, Species=="Mazama americana" )# & subproject_name=="El Escondite")
@@ -156,6 +156,8 @@ Mazama <- camaras %>%
 
 
 for (i in 1:length(Mazama)){
+  if(dim(Mazama[[i]])[1] <= 10) # skip if menos 10 records
+    next
   cat("###", names(Mazama)[i])
   # par(mar = c(5, 4, 3, 3) + 0.1)
   activityDensity (recordTable = Mazama[[i]],

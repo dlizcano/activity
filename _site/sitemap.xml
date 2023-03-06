@@ -2,11 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>https://dlizcano.github.io/activity/about.html</loc>
-    <lastmod>2023-03-01T23:36:41-05:00</lastmod>
+    <lastmod>2023-03-05T23:37:59-05:00</lastmod>
   </url>
   <url>
     <loc>https://dlizcano.github.io/activity/</loc>
     <lastmod>2022-11-04T12:58:30-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://dlizcano.github.io/activity/posts/americana/</loc>
+    <lastmod>2023-03-05T21:20:19-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://dlizcano.github.io/activity/posts/armadillo/</loc>
+    <lastmod>2023-03-05T21:18:56-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://dlizcano.github.io/activity/posts/eira/</loc>
+    <lastmod>2023-03-05T21:39:28-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://dlizcano.github.io/activity/posts/jaguar/</loc>
+    <lastmod>2023-03-05T21:51:31-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://dlizcano.github.io/activity/posts/nasua/</loc>
+    <lastmod>2023-03-05T22:47:05-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://dlizcano.github.io/activity/posts/neque/</loc>
+    <lastmod>2023-03-05T23:00:44-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://dlizcano.github.io/activity/posts/ocelot/</loc>
+    <lastmod>2023-03-05T23:24:17-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://dlizcano.github.io/activity/posts/paca/</loc>
+    <lastmod>2023-03-05T23:33:12-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://dlizcano.github.io/activity/posts/tapirus/</loc>
+    <lastmod>2023-03-05T21:19:38-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://dlizcano.github.io/activity/posts/yaguarundi/</loc>
+    <lastmod>2023-03-05T21:29:05-05:00</lastmod>
   </url>
   <url>
     <loc>https://dlizcano.github.io/activity/posts/mono/</loc>
@@ -17,18 +57,6 @@
     <lastmod>2023-03-02T00:25:01-05:00</lastmod>
   </url>
   <url>
-    <loc>https://dlizcano.github.io/activity/posts/eira/</loc>
-    <lastmod>2023-03-01T21:37:22-05:00</lastmod>
-  </url>
-  <url>
-    <loc>https://dlizcano.github.io/activity/posts/nasua/</loc>
-    <lastmod>2023-03-01T21:39:37-05:00</lastmod>
-  </url>
-  <url>
-    <loc>https://dlizcano.github.io/activity/posts/ocelot/</loc>
-    <lastmod>2023-03-01T23:17:52-05:00</lastmod>
-  </url>
-  <url>
     <loc>https://dlizcano.github.io/activity/posts/pecari/</loc>
     <lastmod>2023-03-01T23:57:43-05:00</lastmod>
   </url>
@@ -37,27 +65,7 @@
     <lastmod>2023-03-01T18:14:26-05:00</lastmod>
   </url>
   <url>
-    <loc>https://dlizcano.github.io/activity/posts/americana/</loc>
-    <lastmod>2023-03-01T15:34:55-05:00</lastmod>
-  </url>
-  <url>
-    <loc>https://dlizcano.github.io/activity/posts/jaguar/</loc>
-    <lastmod>2023-03-01T15:34:56-05:00</lastmod>
-  </url>
-  <url>
     <loc>https://dlizcano.github.io/activity/posts/puma/</loc>
-    <lastmod>2023-03-01T15:34:56-05:00</lastmod>
-  </url>
-  <url>
-    <loc>https://dlizcano.github.io/activity/posts/armadillo/</loc>
-    <lastmod>2023-03-01T15:34:56-05:00</lastmod>
-  </url>
-  <url>
-    <loc>https://dlizcano.github.io/activity/posts/neque/</loc>
-    <lastmod>2023-03-01T15:34:56-05:00</lastmod>
-  </url>
-  <url>
-    <loc>https://dlizcano.github.io/activity/posts/paca/</loc>
     <lastmod>2023-03-01T15:34:56-05:00</lastmod>
   </url>
   <url>

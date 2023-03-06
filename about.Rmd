@@ -2,17 +2,24 @@
 title: "About this blog"
 description: |
   Some additional details about this blog
+fig.width: 2 
+fig.height: 2
 ---
 
 This blog presents some results for the initiative [Awake-CameraTrap in wildlife inisights](https://app.wildlifeinsights.org/initiatives/2000134/Awake-CameraTrap)
 
 Most Animal illustrations are coming from phylopic and were elaborated by [Gabriela Palomo-Munoz](https://twitter.com/gabbspalomo) under licence [CC-BY-NC 3.0](http://creativecommons.org/licenses/by-nc/3.0/)
 
-Most pictures are from the reserves Selva Vides and Escondite in Putumayo and Amargal and Selva Mojada in Choco.
+Most pictures are from the reserves Selva Vides and Escondite in Putumayo, Amargal and Selva Mojada and Chachita in Choco and Macarenia travel, Macarenia birding and Manigua in Meta.
 
- ![Selva Vides](https://dlizcano.github.io/activity/fig/selvavides_logo.jpg)
  
-  ![El Escondite](https://dlizcano.github.io/activity/fig/escondite_logo.jpg)
+ 
+  
+
+| Choco      | Putumayo | Meta     |
+| :---        |    :----:   |          ---: |
+| ![Chachita](https://monitoreo-acustico.netlify.app/images/blog/chachita.webp){width=50%}   | ![El Escondite](https://dlizcano.github.io/activity/fig/escondite_logo.jpg){width=50%}  | Here's this   |
+| ![Selva Mojada](https://monitoreo-acustico.netlify.app/images/blog/selvamojada.jpg){width=50%}   | ![Selva Vides](https://dlizcano.github.io/activity/fig/selvavides_logo.jpg){width=50%}  | And more      |
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)

@@ -16,4 +16,4 @@ base_url: https://dlizcano.github.io/activity
 collections:
   posts:
     disqus: activity patterns for mammals
-    share: [twitter, linkedin]
+    share: [twitter, linkedin, facebook]

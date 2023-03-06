@@ -1,0 +1,170 @@
+---
+title: "Activity Pattern for zariguella"
+description: |
+  Activity Pattern for _Didelphis marsupialis_
+author:
+  - name: Diego J. Lizcano  
+    url: http://dlizcano.github.io/
+    affiliation: Awake Travel
+    affiliation_url: https://monitoreo-acustico.netlify.app/
+    orcid_id: 0000-0002-9648-0576
+date: "`r Sys.Date()`"
+output:
+  distill::distill_article:
+    self_contained: false
+code_folding: true
+highlight: pygments
+creative_commons: CC BY-SA
+citation_url: https://dlizcano.github.io/activity
+base_url: https://dlizcano.github.io/activity
+preview: https://dlizcano.github.io/activity/fig/zariguella.png
+twitter:
+  site: "@rstudio"
+  creator: "@dlizcano"
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+# Learn more about creating blogs with Distill at:
+# https://rstudio.github.io/distill/blog.html
+
+```
+
+
+# Descripción
+
+La zariguella (_Didelphis marsupialis_) también llamado, calatrupa, carachupa, tlacuache común, raposa, rabipelado, runcho, tacuazín, chucha o fara; asimismo chucha orejinegra, tlacuache sureño, zorrochucho, zorro cola pelada, zarigüeya, guanchaca o guazalo. Es una especie de marsupial. Esta especie puede llegar a medir entre 45 y 60 cm de largo, y puede llegar a pesar más de 2 kg.
+
+### Detalles de Wikipedia
+
+https://es.wikipedia.org/wiki/Didelphis_marsupialis
+
+
+# Mapa de distribución
+```{r}
+
+
+################
+library(readr)
+library(tidyverse)
+library(sf)
+library(camtrapR)
+library(raster)
+library(tmap)
+library(tmaptools)
+library(mapview)
+
+# source("D:/BoxFiles/Box Sync/CodigoR/patrones_actividad/R/TEAM.R")
+
+source("D:/BoxFiles/Box Sync/github/activity/R/TEAM.R")
+
+##### Read datos.raw
+##### Read datos.raw
+# deployment <- read_csv("D:/BoxFiles/Box Sync/CodigoR/patrones_actividad/data/deployments.csv")
+
+deployment <- read_csv("C:/CodigoR/Awake_datos/data/Awake_full/deployments.csv")
+
+# images <- read_csv("D:/BoxFiles/Box Sync/CodigoR/patrones_actividad/data/images.csv")
+# full.data <- left_join(images, deployment)
+
+images <- read_csv("C:/CodigoR/Awake_datos/data/Awake_full/images.csv")
+sequences <- read_csv("C:/CodigoR/Awake_datos/data/Awake_full/sequences.csv")
+full.data.1 <- left_join(images, sequences)
+full.data <- left_join(full.data.1, deployment)
+
+#### elimina dos camaras sin coordenadas
+#ind <- which(is.na(datos.raw1$Lat))
+#datos.raw <- datos.raw1[-ind,]
+
+#### make sf object
+datos.raw_sf <- st_as_sf(full.data, coords = c("longitude", "latitude"), 
+                        crs = "+proj=longlat +ellps=GRS80 +no_defs")
+# make sf
+camaras <-  st_transform (datos.raw_sf, "+proj=longlat +ellps=GRS80 +no_defs") 
+
+# make species mat
+mat.per.sp<-f.matrix.creator2(data = full.data, year = 2022)
+# mat.per.sp <- mat.per.sp[-1] # elimina NA 
+sp.names<-names(mat.per.sp) # species names
+
+# fix species for camtrapR
+camaras$species_epitet <- camaras$species
+camaras$Species <- str_c(camaras$genus, camaras$species, sep = " ", collapse = NULL)
+camaras$DateTimeOriginal <- as.character(strptime (camaras$timestamp, "%Y-%m-%d %H:%M:%S"))#sub(" UTC", "", camaras$timestamp) # remove the UTC
+
+camaras$Date <- as.character(strptime (camaras$timestamp, "%Y-%m-%d"))
+camaras$Time <- format(as.POSIXct(camaras$timestamp), format = "%H:%M:%S")
+
+#camaras
+camaras_unique <- deployment %>%
+      dplyr::select(anfitrion, camera_name, latitude, longitude) %>%  
+      st_as_sf( coords = c("longitude", "latitude"), 
+                        crs = "+proj=longlat +ellps=GRS80 +no_defs")
+
+###################
+
+
+```
+
+
+### _Didelphis marsupialis_
+
+Zoom a la region de interes
+
+```{r eval=TRUE, layout="l-screen-inset shaded"}
+
+chucha <- filter(camaras, Species=="Didelphis marsupialis")# & subproject_name=="El Escondite")
+by_sp <- camaras %>%  group_by(Species) %>% tally()
+fotografias <- chucha %>%  group_by(deployment_id) %>% tally()
+names(fotografias) <-  c("Camara", "Fotos zariguella", "geometry")
+
+
+mapview(camaras_unique, cex=1, col.regions = "black") + 
+  mapview(fotografias,  cex = "Fotos zariguella",
+                col.regions = "red", alpha = 0, map.types=c("Esri.WorldImagery", "OpenTopoMap"))
+
+```
+
+
+# Grafica actividad
+
+```{r eval=TRUE, results='asis'}
+
+
+# make shorter table
+Didelphis <- camaras %>% 
+  dplyr::select(Species, DateTimeOriginal, Date, Time, anfitrion) %>% 
+  dplyr::filter (Species =="Didelphis marsupialis" )  %>%  
+  as.data.frame() %>% 
+  dlply(.(anfitrion)) # return list by anfitrion
+
+
+ for (i in 1:length(Didelphis)){
+  if(dim(Didelphis[[i]])[1] <= 10) # skip if menos 10 records
+    next
+  cat("###", names(Didelphis)[i])
+  #plot.new( )
+  #plot.window( xlim=c(-1,25), ylim=c(0,1))
+  # par(mar = c(5, 4, 3, 3) + 0.1)
+  activityDensity (recordTable = Didelphis[[i]],
+                   species     = "Didelphis marsupialis",
+                   recordDateTimeCol="DateTimeOriginal") 
+  rect(0, 0, 6, 2.2, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transparent")
+  rect(18, 0, 24, 2.2, col= rgb(0.211,0.211,0.211, alpha=0.2), border = "transparent")
+ }
+
+
+```
+
+# Foto
+
+ [![Zariguella](https://dlizcano.github.io/activity/fig/Didelphis_marsupialis_small.jpg)]( https://dlizcano.github.io/activity/fig/Didelphis_marsupialis_large.jpg)
+
+# Información de la sesión en R.
+
+```{r sesion, results='markup'}
+print(sessionInfo(), locale = FALSE)
+```
+

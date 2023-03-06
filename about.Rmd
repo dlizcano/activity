@@ -18,7 +18,7 @@ Most pictures are from the reserves Selva Vides and Escondite in Putumayo, Amarg
 
 | Choco      | Putumayo | Meta     |
 | :---        |    :----:   |          ---: |
-| ![Chachita](https://monitoreo-acustico.netlify.app/images/blog/chachita.webp){width=50%}   | ![El Escondite](https://dlizcano.github.io/activity/fig/escondite_logo.jpg){width=50%}  |  ![Macarena](https://scontent.fbog14-1.fna.fbcdn.net/v/t39.30808-6/219136225_282121177249911_388686415443700592_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=UQ0f27LQcTEAX8ue7ef&_nc_ht=scontent.fbog14-1.fna&oh=00_AfCnlw0ZNDFBGFCDygTCmiWEhecZHRVRAUvgXUdlv11IGQ&oe=640AB3D3){width=75%}  |
+| ![Chachita](https://monitoreo-acustico.netlify.app/images/blog/chachita.webp){width=50%}   | ![El Escondite](https://dlizcano.github.io/activity/fig/escondite_logo.jpg){width=45%}  |  ![Macarena](https://scontent.fbog14-1.fna.fbcdn.net/v/t39.30808-6/219136225_282121177249911_388686415443700592_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=UQ0f27LQcTEAX8ue7ef&_nc_ht=scontent.fbog14-1.fna&oh=00_AfCnlw0ZNDFBGFCDygTCmiWEhecZHRVRAUvgXUdlv11IGQ&oe=640AB3D3){width=75%}  |
 | ![Selva Mojada](https://monitoreo-acustico.netlify.app/images/blog/selvamojada.jpg){width=50%}   | ![Selva Vides](https://dlizcano.github.io/activity/fig/selvavides_logo.jpg){width=50%}  |       |
 | ![Amargal](https://monitoreo-acustico.netlify.app/images/blog/amargal.jpg){width=50%} |  | 
 

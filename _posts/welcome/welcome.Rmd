@@ -4,14 +4,24 @@ description: |
   Welcome to our new blog, Activity Patterns. We hope you enjoy 
   reading what we have to say!
 author:
-  - name: Nora Jones 
-    url: https://example.com/norajones
-    affiliation: Spacely Sprockets
-    affiliation_url: https://example.com/spacelysprokets
-date: 11-04-2022
+  - name: Diego J. Lizcano  
+    url: http://dlizcano.github.io/
+    affiliation: Awake Travel
+    affiliation_url: https://monitoreo-acustico.netlify.app/
+    orcid_id: 0000-0002-9648-0576
+date: "11-04-2022"
 output:
   distill::distill_article:
     self_contained: false
+code_folding: true
+highlight: pygments
+creative_commons: CC BY-SA
+citation_url: https://dlizcano.github.io/activity
+base_url: https://dlizcano.github.io/activity
+preview: https://dlizcano.github.io/activity/fig/cerrillo.png
+twitter:
+  site: "@rstudio"
+  creator: "@dlizcano"
 ---
 
 ```{r setup, include=FALSE}
